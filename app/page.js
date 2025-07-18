@@ -365,7 +365,7 @@ export default function Home() {
             <h2 className="text-5xl font-bold mb-12 text-[#19ff7d] font-vina-sans relative">
               Nasi Sponzori
               {/* Adjusted text size for decorative characters to match new heading size */}
-              <span className="absolute top-0 left-[50%] -translate-x-[72.5px] -translate-y-[0px] text-4xl text-[#19ff7d]">
+              <span className="absolute top-0 left-[50%] -translate-x-[72px] -translate-y-[0px] text-4xl text-[#19ff7d]">
                 ˇ
               </span>
             </h2>

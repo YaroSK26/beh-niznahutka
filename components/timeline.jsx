@@ -11,7 +11,7 @@ export function TimelineItem({
 }) {
   return (
     <div className={cn("mb-8 flex items-start relative", className)} {...props}>
-      <div className="absolute left-0 top-0 flex items-center justify-center w-16 h-16 rounded-full bg-[#19ff7d] text-[#05371b] font-bold -left-4 md:-left-8 z-10 flex-shrink-0">
+      <div className="absolute top-10 md:top-6 -left-12 flex items-center justify-center w-16 h-16 rounded-full bg-[#19ff7d] text-[#05371b] font-bold  md:-left-16 z-10 flex-shrink-0">
         <span className="text-sm md:text-base text-center">{time}</span>
       </div>
       <div className="ml-16 md:ml-24 bg-[#05371b] p-6 rounded-lg shadow-lg w-full">
