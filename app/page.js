@@ -140,7 +140,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="mt-2 text-lg md:text-xl text-white font-sans"
             >
-              21. September | Strelnica, Nižná Hutka
+              28. September | Strelnica, Nižná Hutka
             </motion.p>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -276,15 +276,16 @@ export default function Home() {
               </div>
               <div className="bg-[#05371b] p-6 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold mb-2 text-[#19ff7d] font-sans">
-                  1km Detský beh
+                  500m Detský beh
                 </h3>
                 <p className="text-lg mb-4 font-sans">
                   Zábavná trasa pre najmenších.
                 </p>
                 {/* Image for Kids route */}
+
                 <div className="relative w-full h-64 mb-4 rounded-md overflow-hidden border-2 border-[#19ff7d]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d4337.7760499758715!2d21.3569382971221!3d48.655560985221314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e2!4m3!3m2!1d48.6549185!2d21.364753399999998!4m3!3m2!1d48.655750999999995!2d21.359613!4m3!3m2!1d48.6561994!2d21.3607563!4m3!3m2!1d48.654973299999995!2d21.3647796!5e1!3m2!1ssk!2ssk!4v1752834750071!5m2!1ssk!2ssk"
+                    src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2168.945228184228!2d21.36338242645262!3d48.65423132130512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m3!3m2!1d48.6534951!2d21.3672447!4m3!3m2!1d48.6549676!2d21.36467!4m3!3m2!1d48.653653399999996!2d21.3671987!5e1!3m2!1ssk!2ssk!4v1753130637868!5m2!1ssk!2ssk"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

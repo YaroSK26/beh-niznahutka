@@ -7,8 +7,8 @@ export default function SponsorsSlider() {
   const sponsors = [
     { name: "Online Relax", logo: "/sponzori/logo-onlinerelax.png" },
     { name: "Exodus Coworking", logo: "/sponzori/logo-exodus.svg" },
-    { name: "x", logo: "/sponzori/x.png" },
-    { name: "x", logo: "/sponzori/x.png" },
+    { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
+    { name: "Srdcom i telom", logo: "/sponzori/srdcomitelom.png" },
     { name: "x", logo: "/sponzori/x.png" },
     { name: "x", logo: "/sponzori/x.png" },
   ];
@@ -38,8 +38,8 @@ export default function SponsorsSlider() {
             <Image
               src={sponsor.logo || "/placeholder.svg"}
               alt={sponsor.name}
-              width={120}
-              height={60}
+              width={150}
+              height={80}
               objectFit="contain"
             />
           </div>
