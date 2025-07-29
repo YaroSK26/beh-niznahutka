@@ -9,8 +9,7 @@ export default function SponsorsSlider() {
     { name: "Exodus Coworking", logo: "/sponzori/logo-exodus.svg" },
     { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
     { name: "Srdcom i telom", logo: "/sponzori/srdcomitelom.png" },
-    { name: "x", logo: "/sponzori/x.png" },
-    { name: "x", logo: "/sponzori/x.png" },
+    { name: "Kaufland", logo: "/sponzori/kaufland.png" },
   ];
 
   return (

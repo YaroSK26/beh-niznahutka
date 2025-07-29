@@ -182,50 +182,60 @@ export default function Home() {
                 </div>
               </div>
               {/* Timeline - Right on desktop, bottom on mobile */}
-              <div>
-                <Timeline>
-                  <TimelineItem
-                    time="09:00"
-                    title="Otvorenie areálu a registrácia"
-                    description="Online a na mieste."
-                  />
-                  <TimelineItem
-                    time="13:00"
-                    title="Krátke spoločné bohoslužby"
-                    description="Duchovné zamyslenie pred štartom."
-                  />
-                  <TimelineItem
-                    time="13:30"
-                    title="Štart detského behu"
-                    description="Zábavná trasa pre najmenších."
-                  />
-                  <TimelineItem
-                    time="14:00"
-                    title="Štart hlavného behu"
-                    description="Trvanie max 45 minút."
-                  />
-                  <TimelineItem
-                    time="15:00"
-                    title="Vyhodnotenie a odovzdávanie cien"
-                    description="Vyhlásenie víťazov a odovzdávanie medailí."
-                  />
-                  <TimelineItem
-                    time="15:30"
-                    title="Občerstvenie"
-                    description="Guláš a ďalšie dobroty pre všetkých účastníkov."
-                  />
-                  <TimelineItem
-                    time="16:00"
-                    title="Hudobné vystúpenie"
-                    description="Koncert skupiny Kalap."
-                  />
-                  <TimelineItem
-                    time="17:00"
-                    title="Záver podujatia"
-                    description="Poďakovanie účastníkom, dobrovoľníkom a sponzorom."
-                  />
-                </Timeline>
-              </div>
+             <div>
+  <Timeline>
+    <TimelineItem
+      time="13:00"
+      title="Registrácia účastníkov"
+      description="Príprava na podujatie."
+    />
+    <TimelineItem
+      time="14:15"
+      title="Rozcvička pre deti"
+      description="Krátka rozcvička (cca 5 min)."
+    />
+    <TimelineItem
+      time="14:30"
+      title="Štart detského behu"
+      description="Trasa 500 m pre najmenších."
+    />
+    <TimelineItem
+      time="14:30"
+      title="Krátka kázeň / bohoslužba s farárkou"
+      description="Duchovné zamyslenie (cca 10–15 min)."
+    />
+    <TimelineItem
+      time="14:45"
+      title="Rozcvička pre dospelých"
+      description="Krátka rozcvička (cca 5 min)."
+    />
+    <TimelineItem
+      time="15:00"
+      title="Štart hlavného behu"
+      description="Trasa 5 km pre dospelých."
+    />
+    <TimelineItem
+      time="15:00 - 17:00"
+      title="Občerstvenie"
+      description="Guláš a ďalšie dobroty pre všetkých účastníkov."
+    />
+    <TimelineItem
+      time="16:00"
+      title="Vyhodnotenie + poďakovanie + tombola"
+      description="Vyhlásenie víťazov, poďakovanie a tombola."
+    />
+    <TimelineItem
+      time="17:00"
+      title="Panelová diskusia"
+      description="Diskusia: Peter Polák + Peter Gombita."
+    />
+    <TimelineItem
+      time="18:30"
+      title="Hudobný program"
+      description="Koncert skupiny Kalap / iná skupina."
+    />
+  </Timeline>
+</div>
             </div>
           </div>
         </motion.section>
@@ -245,7 +255,7 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-[#05371b] p-6 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold mb-2 text-[#19ff7d] font-sans">
-                  5 km trasa
+                  5 km hlavný beh
                 </h3>
                 <p className="text-lg mb-4 font-sans">Pre skúsených bežcov.</p>
                 {/* Image for 5 km route */}
@@ -276,7 +286,7 @@ export default function Home() {
               </div>
               <div className="bg-[#05371b] p-6 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold mb-2 text-[#19ff7d] font-sans">
-                  500m Detský beh
+                  500m detský beh
                 </h3>
                 <p className="text-lg mb-4 font-sans">
                   Zábavná trasa pre najmenších.
