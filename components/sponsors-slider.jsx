@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -12,27 +11,34 @@ export default function SponsorsSlider() {
     { name: "Kaufland", logo: "/sponzori/kaufland.png" },
   ];
 
+  // Duplikujeme sponzorov, aby sme vytvorili plynulú slučku.
+  // Dve sady sponzorov sú zvyčajne dostatočné pre plynulý prechod.
+  const duplicatedSponsors = [...sponsors, ...sponsors];
+
   return (
     <div className="relative w-full overflow-hidden py-8 border-l-2 border-[#19ff7d] border-r-2">
       <motion.div
-        className="flex"
+        className="flex flex-nowrap" // Zabezpečí, aby sa položky neobalovali na nový riadok
         animate={{
-          x: ["0%", "-100%"],
+          // Animujeme z 0% na -50% celkovej šírky motion.div.
+          // Keďže motion.div obsahuje dve sady sponzorov, -50% znamená posun
+          // presne o šírku jednej sady, čím sa vytvorí plynulá slučka.
+          x: ["0%", "-50%"],
           transition: {
             x: {
               repeat: Number.POSITIVE_INFINITY,
               repeatType: "loop",
-              duration: 25, // Adjust duration for speed
+              duration: 25, // Upravte trvanie pre rýchlosť animácie
               ease: "linear",
             },
           },
         }}
       >
-        {/* Duplicate sponsors to create a seamless loop */}
-        {[...sponsors, ...sponsors].map((sponsor, index) => (
+        {duplicatedSponsors.map((sponsor, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-1/3 md:w-1/5 lg:w-1/6 flex items-center justify-center p-4"
+            className="flex-shrink-0 w-1/5 flex items-center justify-center p-4" // Zmenené šírky pre menej sponzorov
+            style={{ minWidth: "200px" }} // Zväčšená minimálna šírka pre lepšie zobrazenie
           >
             <Image
               src={sponsor.logo || "/placeholder.svg"}

@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -9,10 +8,10 @@ import { useState } from "react";
 import { MenuIcon, XIcon } from "lucide-react";
 import { HoverUnderlineLink } from "../components/hover-underline-link";
 import { Timeline, TimelineItem } from "@/components/timeline";
+import { CountdownTimer } from "@/components/countdown-timer"; // Import the new component
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   // Animation variants for sections
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -22,15 +21,18 @@ export default function Home() {
       transition: { duration: 0.8, ease: "easeOut" },
     },
   };
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Set the target date for the main run (September 28, 15:00)
+  // Assuming the current year is 2025 based on the provided context date.
+  const eventTargetDate = "2025-09-28T15:00:00";
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-black to-[#05371b] text-white">
       {/* Header */}
-      <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)]  h-16 flex items-center justify-between px-4 lg:px-6 shadow-lg bg-[#05371b] rounded-full border-l-2 border-r-2 border-[#19ff7d] z-50">
+      <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] h-16 flex items-center justify-between px-4 lg:px-6 shadow-lg bg-[#05371b] rounded-full border-l-2 border-r-2 border-[#19ff7d] z-50">
         <Link
           href="/"
           className="flex items-center justify-center text-[#19ff7d] font-bold text-4xl font-vina-sans h-full pl-2 relative" // Changed to text-4xl for consistent size
@@ -140,12 +142,20 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="mt-2 text-lg md:text-xl text-white font-sans"
             >
-              28. September | Strelnica, Nižná Hutka
+              28. September 2025 | Strelnica, Nižná Hutka
             </motion.p>
+            {/* Countdown Timer */}
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            >
+              <CountdownTimer targetDate={eventTargetDate} />
+            </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }} // Adjusted delay
             >
               <Button
                 asChild
@@ -161,7 +171,7 @@ export default function Home() {
         {/* Program Section */}
         <motion.section
           id="program"
-          className="w-full py-16 md:py-24  text-white"
+          className="w-full py-16 md:py-24 text-white"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -175,74 +185,75 @@ export default function Home() {
               {/* Poster Image Placeholder - Left on desktop, top on mobile */}
               <div className="flex justify-center md:justify-start">
                 <div className="relative w-full max-w-md aspect-[3/4] rounded-lg overflow-hidden border-2 border-[#19ff7d] shadow-xl">
-                  <img
+                  <Image
                     src="/poster.png" // You can replace this with your actual poster image path
                     alt="Event Poster Placeholder"
+                    layout="fill"
                   />
                 </div>
               </div>
               {/* Timeline - Right on desktop, bottom on mobile */}
-             <div>
-  <Timeline>
-    <TimelineItem
-      time="13:00"
-      title="Registrácia účastníkov"
-      description="Príprava na podujatie."
-    />
-    <TimelineItem
-      time="14:15"
-      title="Rozcvička pre deti"
-      description="Krátka rozcvička (cca 5 min)."
-    />
-    <TimelineItem
-      time="14:30"
-      title="Štart detského behu"
-      description="Trasa 500 m pre najmenších."
-    />
-    <TimelineItem
-      time="14:30"
-      title="Krátka kázeň / bohoslužba s farárkou"
-      description="Duchovné zamyslenie (cca 10–15 min)."
-    />
-    <TimelineItem
-      time="14:45"
-      title="Rozcvička pre dospelých"
-      description="Krátka rozcvička (cca 5 min)."
-    />
-    <TimelineItem
-      time="15:00"
-      title="Štart hlavného behu"
-      description="Trasa 5 km pre dospelých."
-    />
-    <TimelineItem
-      time="15:00 - 17:00"
-      title="Občerstvenie"
-      description="Guláš a ďalšie dobroty pre všetkých účastníkov."
-    />
-    <TimelineItem
-      time="16:00"
-      title="Vyhodnotenie + poďakovanie + tombola"
-      description="Vyhlásenie víťazov, poďakovanie a tombola."
-    />
-    <TimelineItem
-      time="17:00"
-      title="Panelová diskusia"
-      description="Diskusia: Peter Polák + Peter Gombita."
-    />
-    <TimelineItem
-      time="18:30"
-      title="Hudobný program"
-      description="Koncert skupiny Kalap / iná skupina."
-    />
-  </Timeline>
-</div>
+              <div>
+                <Timeline>
+                  <TimelineItem
+                    time="13:00"
+                    title="Registrácia účastníkov"
+                    description="Príprava na podujatie."
+                  />
+                  <TimelineItem
+                    time="14:15"
+                    title="Rozcvička pre deti"
+                    description="Krátka rozcvička (cca 5 min)."
+                  />
+                  <TimelineItem
+                    time="14:30"
+                    title="Štart detského behu"
+                    description="Trasa 500 m pre najmenších."
+                  />
+                  <TimelineItem
+                    time="14:30"
+                    title="Krátka kázeň / bohoslužba s farárkou"
+                    description="Duchovné zamyslenie (cca 10–15 min)."
+                  />
+                  <TimelineItem
+                    time="14:45"
+                    title="Rozcvička pre dospelých"
+                    description="Krátka rozcvička (cca 5 min)."
+                  />
+                  <TimelineItem
+                    time="15:00"
+                    title="Štart hlavného behu"
+                    description="Trasa 5 km pre dospelých."
+                  />
+                  <TimelineItem
+                    time="15:00 - 17:00"
+                    title="Občerstvenie"
+                    description="Guláš a ďalšie dobroty pre všetkých účastníkov."
+                  />
+                  <TimelineItem
+                    time="16:00"
+                    title="Vyhodnotenie + poďakovanie + tombola"
+                    description="Vyhlásenie víťazov, poďakovanie a tombola."
+                  />
+                  <TimelineItem
+                    time="17:00"
+                    title="Panelová diskusia"
+                    description="Diskusia: Peter Polák + Peter Gombita."
+                  />
+                  <TimelineItem
+                    time="18:30"
+                    title="Hudobný program"
+                    description="Koncert skupiny Kalap / iná skupina."
+                  />
+                </Timeline>
+              </div>
             </div>
           </div>
         </motion.section>
         {/* Routes Section */}
         <motion.section
           id="trasy"
-          className="w-full py-16 md:py-24  text-white"
+          className="w-full py-16 md:py-24 text-white"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -292,7 +303,6 @@ export default function Home() {
                   Zábavná trasa pre najmenších.
                 </p>
                 {/* Image for Kids route */}
-
                 <div className="relative w-full h-64 mb-4 rounded-md overflow-hidden border-2 border-[#19ff7d]">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2168.945228184228!2d21.36338242645262!3d48.65423132130512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m3!3m2!1d48.6534951!2d21.3672447!4m3!3m2!1d48.6549676!2d21.36467!4m3!3m2!1d48.653653399999996!2d21.3671987!5e1!3m2!1ssk!2ssk!4v1753130637868!5m2!1ssk!2ssk"
@@ -324,7 +334,7 @@ export default function Home() {
         {/* Registration Section */}
         <motion.section
           id="registracia"
-          className="w-full py-16 md:py-24  text-white"
+          className="w-full py-16 md:py-24 text-white"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -366,7 +376,7 @@ export default function Home() {
         {/* Sponsors Section */}
         <motion.section
           id="sponzori"
-          className="w-full py-16 md:py-24  text-white overflow-hidden"
+          className="w-full py-16 md:py-24 text-white overflow-hidden"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -386,7 +396,7 @@ export default function Home() {
         {/* Contact Section */}
         <motion.section
           id="kontakt"
-          className="w-full py-16 md:py-24  text-white"
+          className="w-full py-16 md:py-24 text-white"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -419,7 +429,7 @@ export default function Home() {
                 <p className="text-lg font-sans text-white ">
                   obecniznahutka@netkosice.sk
                 </p>
-                <p className="text-lg font-sans">055/685 23 04</p>
+                <p className="text-lg font-sans">+421 903 553 735</p>
               </div>
               <div className="flex flex-col items-center space-y-4 h-full">
                 <h3 className="text-2xl font-bold text-[#19ff7d] font-sans">
