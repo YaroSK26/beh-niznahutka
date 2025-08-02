@@ -50,7 +50,7 @@ export function CountdownTimer({ targetDate }) {
           </span>
           <span className="text-sm md:text-base text-white font-sans uppercase">
             {interval === "days"
-              ? "dni"
+              ? "dní"
               : interval === "hours"
               ? "hodín"
               : interval === "minutes"

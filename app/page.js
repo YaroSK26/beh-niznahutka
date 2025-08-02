@@ -349,16 +349,9 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-lg md:text-xl mb-6 font-sans">
-              Registrovať sa môžete online alebo priamo na mieste v deň
-              podujatia.
+              Registrovať sa môžete len online. Štartovné čísla, spinky, zoznam účastníkov budú pripravené.
             </p>
-            <p className="text-lg md:text-xl mb-6 font-sans">
-              Štartovné čísla, spinky, zoznam účastníkov budú pripravené.
-            </p>
-            <p className="text-lg md:text-xl mb-8 font-sans">
-              Poplatok: Online registrácia je výhodnejšia. Na mieste bude
-              poplatok vyšší.
-            </p>
+           
             <Button
               asChild
               className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold text-lg px-8 py-6 rounded-full shadow-lg"
