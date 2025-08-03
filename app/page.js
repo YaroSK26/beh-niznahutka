@@ -201,12 +201,12 @@ export default function Home() {
                     description="Príprava na podujatie."
                   />
                   <TimelineItem
-                    time="14:15"
+                    time="14:00"
                     title="Rozcvička pre deti"
                     description="Krátka rozcvička (cca 5 min)."
                   />
                   <TimelineItem
-                    time="14:30"
+                    time="14:15"
                     title="Štart detského behu"
                     description="Trasa 500 m pre najmenších."
                   />
