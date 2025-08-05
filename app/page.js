@@ -161,7 +161,7 @@ export default function Home() {
                 asChild
                 className="mt-8 bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold text-lg px-8 py-6 rounded-full shadow-lg"
               >
-                <Link href="https://www.pretekaj.sk/" target="_blank">
+                <Link href="https://pretekaj.sk/hutcanska5" target="_blank">
                   Registrovať sa
                 </Link>
               </Button>
@@ -349,15 +349,16 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-lg md:text-xl mb-6 font-sans">
-              Registrovať sa môžete len online. Štartovné čísla, spinky, zoznam účastníkov budú pripravené.
+              Registrovať sa môžete len online. Štartovné čísla, spinky, zoznam
+              účastníkov budú pripravené.
             </p>
-           
+
             <Button
               asChild
               className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold text-lg px-8 py-6 rounded-full shadow-lg"
             >
               <Link
-                href="https://www.pretekaj.sk/"
+                href="https://pretekaj.sk/hutcanska5"
                 target="_blank"
                 rel="noopener noreferrer"
               >
