@@ -111,8 +111,8 @@ export default function Home() {
       )}
       <main className="flex-1 pt-24 flex justify-center items-center flex-col">
         {/* Hero Section */}
-        <section className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] flex items-center justify-center text-center overflow-hidden p-4">
-          <div className="relative z-10 flex flex-col items-center justify-center container px-4 md:px-6 mx-auto">
+        <section className="relative w-full h-[400px] lg:h-[500px] flex items-center  justify-center text-center overflow-hidden p-4">
+          <div className="relative z-10 flex flex-col items-center justify-center container px-4  md:px-6 mx-auto">
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -177,7 +177,7 @@ export default function Home() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
         >
-          <div className="container px-4 md:px-6 mx-auto">
+          <div className="container px-4 md:px-6 mx-auto ">
             <h2 className="text-5xl font-bold text-center mb-12 text-[#19ff7d] font-vina-sans">
               Program Podujatia
             </h2>
