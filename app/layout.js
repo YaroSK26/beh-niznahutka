@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 // Define local fonts
 const robotoFont = localFont({
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
       >
         {children}
       </body>
+      <Analytics />
     </html>
   );
 }
