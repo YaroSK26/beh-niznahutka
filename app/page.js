@@ -421,7 +421,7 @@ export default function Home() {
                   www.niznahutka.sk
                 </HoverUnderlineLink>
                 <p className="text-lg font-sans text-white ">
-                  obecniznahutka@netkosice.sk
+                  starosta@niznahutka.sk
                 </p>
                 <p className="text-lg font-sans">+421 903 553 735</p>
               </div>

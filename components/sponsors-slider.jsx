@@ -28,7 +28,7 @@ export default function SponsorsSlider() {
             x: {
               repeat: Number.POSITIVE_INFINITY,
               repeatType: "loop",
-              duration: 25, // Upravte trvanie pre rýchlosť animácie
+              duration: 20, // Upravené trvanie pre rýchlejšiu animáciu
               ease: "linear",
             },
           },
@@ -37,15 +37,20 @@ export default function SponsorsSlider() {
         {duplicatedSponsors.map((sponsor, index) => (
           <div
             key={index}
-            className="flex-shrink-0 w-1/5 flex items-center justify-center p-4" // Zmenené šírky pre menej sponzorov
-            style={{ minWidth: "200px" }} // Zväčšená minimálna šírka pre lepšie zobrazenie
+            // Responzívne šírky:
+            // Na najmenších obrazovkách (mobil) 2 sponzori (w-1/2)
+            // Na malých obrazovkách (sm breakpoint) 3 sponzori (sm:w-1/3)
+            // Na stredných obrazovkách (md breakpoint) 4 sponzori (md:w-1/4)
+            // Na veľkých obrazovkách (lg breakpoint) 5 sponzorov (lg:w-1/5)
+            // Na extra veľkých obrazovkách (xl breakpoint) 6 sponzorov (xl:w-1/6)
+            className="flex-shrink-0 w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5 xl:w-1/6 flex items-center justify-center p-4"
           >
             <Image
               src={sponsor.logo || "/placeholder.svg"}
               alt={sponsor.name}
               width={150}
               height={80}
-              objectFit="contain"
+              className="object-contain" // Použitie Tailwind triedy pre object-fit
             />
           </div>
         ))}
