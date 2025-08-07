@@ -142,7 +142,8 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="mt-2 text-lg md:text-xl text-white font-sans"
             >
-              28. September 2025 | Strelnica, Nižná Hutka
+              28. September 2025 | Strelnica, Nižná Hutka <br />
+              Rozhodca: Peter Buc
             </motion.p>
             {/* Countdown Timer */}
             <motion.div
