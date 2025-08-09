@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import LenisProvider from "@/components/lenisProvider";
 
 // Define local fonts
 const robotoFont = localFont({
@@ -24,12 +25,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="sk">
+      <LenisProvider>
+
       <body
         className={`${robotoFont.variable} ${vinaSansFont.variable} font-sans antialiased`}
-      >
+        >
         {children}
       </body>
       <Analytics />
+        </LenisProvider>
     </html>
   );
 }

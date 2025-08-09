@@ -10,6 +10,8 @@ export default function SponsorsSlider() {
     { name: "Srdcom i telom", logo: "/sponzori/srdcomitelom.png" },
     { name: "Kaufland", logo: "/sponzori/kaufland.png" },
     { name: "Zachej", logo: "/sponzori/Zachej.png" },
+    { name: "ProCare", logo: "/sponzori/procare.svg" },
+    { name: "Biblia a financie", logo: "/sponzori/baf.png" },
   ];
 
   // Duplikujeme sponzorov, aby sme vytvorili plynulú slučku.
