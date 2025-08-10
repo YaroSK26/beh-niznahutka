@@ -453,6 +453,19 @@ export default function Home() {
             </div>
           </div>
         </motion.section>
+        <footer className="w-full py-4 text-center text-sm   ">
+          <p>
+            Stránku vytvoril{" "}
+            <a
+              href="https://www.jaroslav-portfolio.eu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#19ff7d] hover:underline"
+            >
+              Jaroslav Barabáš
+            </a>
+          </p>
+        </footer>
       </main>
     </div>
   );
