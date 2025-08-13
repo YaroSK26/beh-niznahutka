@@ -7,7 +7,7 @@ export default function SponsorsGrid() {
     { name: "Pebar", logo: "/sponzori/pebar.png" },
     { name: "Kaufland", logo: "/sponzori/kaufland.png" },
     { name: "Exodus Coworking", logo: "/sponzori/logo-exodus.svg" },
-    { name: "Zachej", logo: "/sponzori/Zachej.png" },
+    { name: "Zachej", logo: "/sponzori/zachej.png" },
     { name: "ProCare", logo: "/sponzori/procare.svg" },
     { name: "Biblia a financie", logo: "/sponzori/baf.png" },
     { name: "Online Relax", logo: "/sponzori/logo-onlinerelax.png" },
