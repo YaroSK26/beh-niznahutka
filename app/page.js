@@ -197,17 +197,12 @@ export default function Home() {
               <div>
                 <Timeline>
                   <TimelineItem
-                    time="13:00"
+                    time="12:30"
                     title="Registrácia účastníkov"
                     description="Príprava na podujatie."
                   />
                   <TimelineItem
                     time="14:00"
-                    title="Rozcvička pre deti"
-                    description="Krátka rozcvička (cca 5 min)."
-                  />
-                  <TimelineItem
-                    time="14:15"
                     title="Štart detského behu"
                     description="Trasa 500 m pre najmenších."
                   />
@@ -215,11 +210,6 @@ export default function Home() {
                     time="14:30"
                     title="Krátka kázeň / bohoslužba s farárkou"
                     description="Duchovné zamyslenie (cca 10–15 min)."
-                  />
-                  <TimelineItem
-                    time="14:45"
-                    title="Rozcvička pre dospelých"
-                    description="Krátka rozcvička (cca 5 min)."
                   />
                   <TimelineItem
                     time="15:00"
