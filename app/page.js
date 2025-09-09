@@ -202,22 +202,23 @@ export default function Home() {
                     description="Príprava na podujatie."
                   />
                   <TimelineItem
-                    time="14:00"
-                    title="Štart detského behu"
-                    description="Trasa 500 m pre najmenších."
-                  />
-                  <TimelineItem
-                    time="14:30"
+                    time="13:30"
                     title="Krátka kázeň / bohoslužba s farárkou"
                     description="Duchovné zamyslenie (cca 10–15 min)."
                   />
                   <TimelineItem
-                    time="15:00"
+                    time="14:00"
                     title="Štart hlavného behu"
                     description="Trasa 5 km pre dospelých."
                   />
                   <TimelineItem
-                    time="15:00 - 17:00"
+                    time="14:10"
+                    title="Štart detského behu"
+                    description="Trasa 500 m pre najmenších."
+                  />
+
+                  <TimelineItem
+                    time="14:30 - 16:00"
                     title="Občerstvenie"
                     description="Guláš a ďalšie dobroty pre všetkých účastníkov."
                   />
@@ -232,7 +233,7 @@ export default function Home() {
                     description="Diskusia: Peter Polák + Peter Gombita."
                   />
                   <TimelineItem
-                    time="18:30"
+                    time="18:00"
                     title="Hudobný program"
                     description="Koncert skupiny Kalap / iná skupina."
                   />
