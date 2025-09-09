@@ -341,7 +341,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-lg md:text-xl mb-6 font-sans">
-              Registrovať sa môžete len online. Štartovné čísla, spinky, zoznam
+              Registrovať sa môžete online aj osobne, osobne však bude poplatok väčší. Štartovné čísla, spinky, zoznam
               účastníkov budú pripravené.
             </p>
 
@@ -389,60 +389,69 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <div className="container px-4 md:px-6 text-center mx-auto">
-            <h2 className="text-5xl font-bold mb-8 text-[#19ff7d] font-vina-sans">
-              Kontakt
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8 items-stretch justify-center">
-              <div className="flex flex-col items-center space-y-4 h-full">
-                <h3 className="text-2xl font-bold text-[#19ff7d] font-sans">
-                  Obec Nižná Hutka
-                </h3>
-                <Image
-                  src="/logo-niznahutka.png"
-                  alt="Logo obce Nižná Hutka"
-                  width={100}
-                  height={100}
-                  className="w-20 h-20 md:w-24 md:h-24 object-contain"
-                />
-                <HoverUnderlineLink
-                  href="https://www.niznahutka.sk/"
-                  className="text-lg font-sans text-white"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  www.niznahutka.sk
-                </HoverUnderlineLink>
-                <p className="text-lg font-sans text-white ">
-                  starosta@niznahutka.sk
-                </p>
-                <p className="text-lg font-sans">+421 903 553 735</p>
-              </div>
-              <div className="flex flex-col items-center space-y-4 h-full">
-                <h3 className="text-2xl font-bold text-[#19ff7d] font-sans">
-                  Srdcom i telom
-                </h3>
-                <Image
-                  src="/logo-srdcomitelom.png"
-                  alt="Logo Srdcom i telom"
-                  width={70}
-                  height={70}
-                  className="w-16 h-16 md:w-20 md:h-20 object-contain"
-                />
-                <HoverUnderlineLink
-                  href="https://www.srdcomitelom.sk/"
-                  className="text-lg font-sans text-white "
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  www.srdcomitelom.sk
-                </HoverUnderlineLink>
-                <p className="text-lg font-sans text-white ">
-                  srdcomitelom@gmail.com
-                </p>
-                <p className="text-lg font-sans">+421 917 085 569</p>
-              </div>
-            </div>
-          </div>
+  <h2 className="text-5xl font-bold mb-8 text-[#19ff7d] font-vina-sans">
+    Kontakt
+  </h2>
+  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-center">
+    <div className="flex flex-col items-center space-y-4 h-full">
+      <h3 className="text-2xl font-bold text-[#19ff7d] font-sans">
+        Obec Nižná Hutka
+      </h3>
+      <Image
+        src="/logo-niznahutka.png"
+        alt="Logo obce Nižná Hutka"
+        width={100}
+        height={100}
+        className="w-20 h-20 md:w-24 md:h-24 object-contain"
+      />
+      <HoverUnderlineLink
+        href="https://www.niznahutka.sk/"
+        className="text-lg font-sans text-white"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        www.niznahutka.sk
+      </HoverUnderlineLink>
+      <p className="text-lg font-sans text-white ">
+        starosta@niznahutka.sk
+      </p>
+      <p className="text-lg font-sans">+421 903 553 735</p>
+    </div>
+    <div className="flex flex-col items-center space-y-4 h-full">
+      <h3 className="text-2xl font-bold text-[#19ff7d] font-sans">
+        Hlavný rozhodca: Peter Buc M:
+      </h3>
+      <p className="text-lg font-sans text-white ">
+        peter.buc59@gmail.com
+      </p>
+      <p className="text-lg font-sans">+421 905 299 189</p>
+    </div>
+    <div className="flex flex-col items-center space-y-4 h-full">
+      <h3 className="text-2xl font-bold text-[#19ff7d] font-sans">
+        Srdcom i telom
+      </h3>
+      <Image
+        src="/logo-srdcomitelom.png"
+        alt="Logo Srdcom i telom"
+        width={70}
+        height={70}
+        className="w-16 h-16 md:w-20 md:h-20 object-contain"
+      />
+      <HoverUnderlineLink
+        href="https://www.srdcomitelom.sk/"
+        className="text-lg font-sans text-white "
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        www.srdcomitelom.sk
+      </HoverUnderlineLink>
+      <p className="text-lg font-sans text-white ">
+        srdcomitelom@gmail.com
+      </p>
+      <p className="text-lg font-sans">+421 917 085 569</p>
+    </div>
+  </div>
+</div>
         </motion.section>
         <footer className="w-full py-4 text-center text-sm   ">
           <p>
