@@ -13,7 +13,7 @@ const SPONSORS_DATA = [
   { name: "Online Relax", logo: "/sponzori/logo-onlinerelax.png" },
   { name: "Kalap", logo: "/sponzori/kalap.jpg" },
   { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
-  { name: "Mercedes-Benz", logo: "/sponzori/Mercedes.png" },
+  { name: "Mercedes-Benz", logo: "/sponzori/mercedes.png" },
 ];
 
 // Jednotlivý sponzor komponent pre lepšiu čitateľnosť
