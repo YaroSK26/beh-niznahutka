@@ -27,7 +27,7 @@ export default function Home() {
 
   // Set the target date for the main run (September 28, 15:00)
   // Assuming the current year is 2025 based on the provided context date.
-  const eventTargetDate = "2025-09-28T15:00:00";
+  const eventTargetDate = "2025-09-28T14:00:00";
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-black to-[#05371b] text-white">
