@@ -14,6 +14,7 @@ const SPONSORS_DATA = [
   { name: "Kalap", logo: "/sponzori/kalap.jpg" },
   { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
   { name: "Mercedes-Benz", logo: "/sponzori/mercedes.png" },
+  { name: "Sedem Vaša kreatívna ", logo: "/sponzori/sedem.webp" },
 ];
 
 // Jednotlivý sponzor komponent pre lepšiu čitateľnosť
@@ -40,7 +41,7 @@ export default function SponsorsGrid() {
   // Rozdelenie sponzorov na riadky: 4-4-3
   const firstRow = SPONSORS_DATA.slice(0, 4);
   const secondRow = SPONSORS_DATA.slice(4, 8);
-  const thirdRow = SPONSORS_DATA.slice(8, 11);
+  const thirdRow = SPONSORS_DATA.slice(8, 12);
 
   return (
     <section className="w-full py-8 border-l-2 border-[#19ff7d] border-r-2">
@@ -73,7 +74,7 @@ export default function SponsorsGrid() {
         </div>
 
         {/* Tretí riadok - 3 sponzori (centrované) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 justify-center">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 justify-center">
           {thirdRow.map((sponsor, index) => (
             <SponsorCard
               key={`sponsor-row3-${index}`}
