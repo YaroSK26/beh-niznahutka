@@ -9,21 +9,19 @@ const SPONSORS_DATA = [
   { name: "Exodus Coworking", logo: "/sponzori/logo-exodus.svg" },
   { name: "Zachej", logo: "/sponzori/zachej.png" },
   { name: "ProCare", logo: "/sponzori/procare.svg" },
-  { name: "Biblia a financie", logo: "/sponzori/baf.png" },
+  { name: "Fresh ", logo: "/sponzori/fresh.svg" },
   { name: "Online Relax", logo: "/sponzori/logo-onlinerelax.png" },
   { name: "Kalap", logo: "/sponzori/kalap.jpg" },
   { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
   { name: "Mercedes-Benz", logo: "/sponzori/mercedes.png" },
   { name: "Sedem Vaša kreatívna ", logo: "/sponzori/sedem.webp" },
+  { name: "Biblia a financie", logo: "/sponzori/baf.png" },
 ];
 
 // Jednotlivý sponzor komponent pre lepšiu čitateľnosť
-function SponsorCard({ sponsor, index }) {
+function SponsorCard({ sponsor }) {
   return (
-    <div
-      key={index}
-      className="flex items-center justify-center p-4 hover:scale-105 transition-transform duration-200"
-    >
+    <div className="flex items-center justify-center p-4 hover:scale-105 transition-transform duration-200">
       <Image
         src={sponsor.logo || "/placeholder.svg"}
         alt={`Logo ${sponsor.name}`}
@@ -38,10 +36,10 @@ function SponsorCard({ sponsor, index }) {
 
 // Hlavný komponent
 export default function SponsorsGrid() {
-  // Rozdelenie sponzorov na riadky: 4-4-3
+  // Rozdelenie sponzorov na riadky 4-5-4 pre symetrické zobrazenie
   const firstRow = SPONSORS_DATA.slice(0, 4);
-  const secondRow = SPONSORS_DATA.slice(4, 8);
-  const thirdRow = SPONSORS_DATA.slice(8, 12);
+  const secondRow = SPONSORS_DATA.slice(4, 9);
+  const thirdRow = SPONSORS_DATA.slice(9);
 
   return (
     <section className="w-full py-8 border-l-2 border-[#19ff7d] border-r-2">
@@ -53,34 +51,22 @@ export default function SponsorsGrid() {
 
         {/* Prvý riadok - 4 sponzori */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
-          {firstRow.map((sponsor, index) => (
-            <SponsorCard
-              key={`sponsor-row1-${index}`}
-              sponsor={sponsor}
-              index={index}
-            />
+          {firstRow.map((sponsor) => (
+            <SponsorCard key={sponsor.logo} sponsor={sponsor} />
           ))}
         </div>
 
-        {/* Druhý riadok - 4 sponzori */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-4">
-          {secondRow.map((sponsor, index) => (
-            <SponsorCard
-              key={`sponsor-row2-${index}`}
-              sponsor={sponsor}
-              index={index + 4}
-            />
+        {/* Druhý riadok - 5 sponzorov (s Fresh v strede) */}
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-4">
+          {secondRow.map((sponsor) => (
+            <SponsorCard key={sponsor.logo} sponsor={sponsor} />
           ))}
         </div>
 
-        {/* Tretí riadok - 3 sponzori (centrované) */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 justify-center">
-          {thirdRow.map((sponsor, index) => (
-            <SponsorCard
-              key={`sponsor-row3-${index}`}
-              sponsor={sponsor}
-              index={index + 8}
-            />
+        {/* Tretí riadok - 4 sponzori */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {thirdRow.map((sponsor) => (
+            <SponsorCard key={sponsor.logo} sponsor={sponsor} />
           ))}
         </div>
       </div>
