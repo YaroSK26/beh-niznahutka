@@ -263,7 +263,7 @@ export default function Home() {
                 {/* Image for 5 km route */}
                 <div className="relative w-full h-64 mb-4 rounded-md overflow-hidden border-2 border-[#19ff7d]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m44!1m12!1m3!1d8674.803168941631!2d21.350305060493238!3d48.659912940890806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m29!3e2!4m3!3m2!1d48.654196!2d21.3660183!4m3!3m2!1d48.658684!2d21.360505999999997!4m3!3m2!1d48.662298299999996!2d21.353879!4m3!3m2!1d48.6630098!2d21.360084699999998!4m3!3m2!1d48.662998599999995!2d21.3659832!4m3!3m2!1d48.6582875!2d21.3643347!4m3!3m2!1d48.6541314!2d21.366131199999998!5e1!3m2!1ssk!2ssk!4v1752834633766!5m2!1ssk!2ssk"
+                    src="https://www.google.com/maps/embed?pb=!1m48!1m12!1m3!1d8674.777698640837!2d21.3503050711282!3d48.660060940891974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m33!3e2!4m5!1s0x473f274dffbddbf1%3A0x614f86687427ac!2zVXJiw6Fyc2vDoSwgMDQwIDE4IE5pxb5uw6EgSHV0a2E!3m2!1d48.6555134!2d21.363513299999997!4m5!1s0x473f274dd1a31f59%3A0x13a2fb158c25e32d!2s040%2018%20Ni%C5%BEn%C3%A1%20Hutka%2C%20Slovensko!3m2!1d48.6594738!2d21.3604763!4m3!3m2!1d48.662298299999996!2d21.353879!4m3!3m2!1d48.6630098!2d21.360084699999998!4m3!3m2!1d48.662998599999995!2d21.3659832!4m3!3m2!1d48.6582875!2d21.3643347!4m3!3m2!1d48.654427399999996!2d21.364972599999998!5e1!3m2!1ssk!2ssk!4v1758983671914!5m2!1ssk!2ssk"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -272,13 +272,14 @@ export default function Home() {
                     referrerPolicy="no-referrer-when-downgrade"
                     title="5 km route map"
                   ></iframe>
+
                 </div>
                 <Button
                   asChild
                   className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold rounded-full shadow-lg"
                 >
                   <Link
-                    href="https://www.google.com/maps/dir/48.6545984,21.3652617/040+18+Ni%C5%BEn%C3%A1+Hutka,+Slovensko/48.6622983,21.353879/48.6630098,21.3600847/48.6629986,21.3659832/48.6582875,21.3643347/48.6544274,21.3649726/@48.6593348,21.3646067,1790m/data=!3m1!1e3!4m19!4m18!1m0!1m10!1m1!1s0x473f274dd1a31f59:0x13a2fb158c25e32d!2m2!1d21.3604763!2d48.6594738!3m4!1m2!1d21.3564506!2d48.6588108!3s0x473f275299bace8b:0xaa2ec4b0ccf58d44!1m0!1m0!1m0!1m0!1m0!3e2?hl=sk-SK&entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+                    href="https://maps.app.goo.gl/TCmqEJVEBSmNMZQD8"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
