@@ -180,7 +180,7 @@ export default function Home() {
         >
           <div className="container px-4 md:px-6 mx-auto ">
             <h2 className="text-5xl font-bold text-center mb-12 text-[#19ff7d] font-vina-sans">
-              Program Podujatia
+              Program Podujatia 2025
             </h2>
             <div className="grid md:grid-cols-2 gap-12 items-start">
               {/* Poster Image Placeholder - Left on desktop, top on mobile */}
@@ -252,7 +252,7 @@ export default function Home() {
         >
           <div className="container px-4 md:px-6 mx-auto">
             <h2 className="text-5xl font-bold text-center mb-12 text-[#19ff7d] font-vina-sans">
-              Trasy
+              Trasy 2025
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-[#05371b] p-6 rounded-lg shadow-lg">
@@ -272,14 +272,13 @@ export default function Home() {
                     referrerPolicy="no-referrer-when-downgrade"
                     title="5 km route map"
                   ></iframe>
-
                 </div>
                 <Button
                   asChild
                   className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold rounded-full shadow-lg"
                 >
                   <Link
-                    href="https://maps.app.goo.gl/TCmqEJVEBSmNMZQD8"
+                    href="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d1084.471241279228!2d21.364561088783315!3d48.654295142826285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e2!4m3!3m2!1d48.6546137!2d21.365284499999998!4m3!3m2!1d48.6535078!2d21.3672225!4m3!3m2!1d48.6550825!2d21.3644847!4m3!3m2!1d48.6546982!2d21.3653007!5e1!3m2!1ssk!2ssk!4v1759085145372!5m2!1ssk!2ssk"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -297,7 +296,7 @@ export default function Home() {
                 {/* Image for Kids route */}
                 <div className="relative w-full h-64 mb-4 rounded-md overflow-hidden border-2 border-[#19ff7d]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2168.945228184228!2d21.36338242645262!3d48.65423132130512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m3!3m2!1d48.6534951!2d21.3672447!4m3!3m2!1d48.6549676!2d21.36467!4m3!3m2!1d48.653653399999996!2d21.3671987!5e1!3m2!1ssk!2ssk!4v1753130637868!5m2!1ssk!2ssk"
+                    src="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d1084.471241279228!2d21.364561088783315!3d48.654295142826285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e2!4m3!3m2!1d48.6546137!2d21.365284499999998!4m3!3m2!1d48.6535078!2d21.3672225!4m3!3m2!1d48.6550825!2d21.3644847!4m3!3m2!1d48.6546982!2d21.3653007!5e1!3m2!1ssk!2ssk!4v1759085145372!5m2!1ssk!2ssk"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -334,9 +333,9 @@ export default function Home() {
         >
           <div className="container px-4 md:px-6 text-center relative mx-auto">
             <h2 className="text-5xl font-bold mb-8 text-[#19ff7d] font-vina-sans relative">
-              Registracia
+              Registracia 2025
               {/* Adjusted text size for decorative characters to match new heading size */}
-              <span className="absolute top-0 left-[50%] translate-x-[35px] -translate-y-[0px] text-4xl text-[#19ff7d]">
+              <span className="absolute top-0 left-[50%] translate-x-[-10px] -translate-y-[0px] text-4xl text-[#19ff7d]">
                 ´
               </span>
             </h2>
@@ -370,9 +369,9 @@ export default function Home() {
         >
           <div className="container px-4 md:px-6 text-center relative mx-auto">
             <h2 className="text-5xl font-bold mb-12 text-[#19ff7d] font-vina-sans relative">
-              Nasi Sponzori
+              Nasi Sponzori 2025
               {/* Adjusted text size for decorative characters to match new heading size */}
-              <span className="absolute top-0 left-[50%] -translate-x-[72px] -translate-y-[0px] text-4xl text-[#19ff7d]">
+              <span className="absolute top-0 left-[50%] -translate-x-[115px] -translate-y-[0px] text-4xl text-[#19ff7d]">
                 ˇ
               </span>
             </h2>
