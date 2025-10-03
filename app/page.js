@@ -378,6 +378,92 @@ export default function Home() {
             <SponsorsSlider />
           </div>
         </motion.section>
+
+        <motion.section
+          id="fotky"
+          className="w-full py-16 md:py-24 text-white overflow-hidden"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <div className="container px-4 md:px-6 text-center relative mx-auto">
+            <h2 className="text-5xl font-bold mb-12 text-[#19ff7d] font-vina-sans relative">
+              Fotky 2025
+            </h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a
+                href="../beh/1-min.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="../beh/1-min.jpg"
+                  alt="Image 1"
+                  className="w-60 h-60 object-cover"
+                />
+              </a>
+              <a
+                href="../beh/2-min.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="../beh/2-min.jpg"
+                  alt="Image 2"
+                  className="w-60 h-60 object-cover"
+                />
+              </a>
+              <a
+                href="../beh/3-min.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="../beh/3-min.jpg"
+                  alt="Image 3"
+                  className="w-60 h-60 object-cover"
+                />
+              </a>
+              <a
+                href="../beh/8-min.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="../beh/8-min.jpg"
+                  alt="Image 8"
+                  className="w-60 h-60 object-cover"
+                />
+              </a>
+              <a
+                href="../beh/10-min.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="../beh/10-min.jpg"
+                  alt="Image 10"
+                  className="w-60 h-60 object-cover"
+                />
+              </a>
+            </div>
+            <br />
+            <Button
+              asChild
+              className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold text-lg px-8 py-6 rounded-full shadow-lg"
+            >
+              <Link
+                href="https://eu.zonerama.com/diperspective/Album/13934090?secret=hn5CLB1w62wV27vKCE0NYiwvn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Dalšie fotky
+              </Link>
+            </Button>
+          </div>
+        </motion.section>
+
         {/* Contact Section */}
         <motion.section
           id="kontakt"
