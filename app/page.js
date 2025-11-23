@@ -35,13 +35,13 @@ export default function Home() {
       <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] h-16 flex items-center justify-between px-4 lg:px-6 shadow-lg bg-[#05371b] rounded-full border-l-2 border-r-2 border-[#19ff7d] z-50">
         <Link
           href="/"
-          className="flex items-center justify-center text-[#19ff7d] font-bold text-4xl font-vina-sans h-full pl-2 relative" // Changed to text-4xl for consistent size
+          className="flex items-center justify-center text-[#19ff7d] font-bold text-3xl  sm:text-4xl font-vina-sans h-full pl-2 relative" // Changed to text-4xl for consistent size
         >
-          Beh Niznou Hutkou
+          Beh Srdcom i telom
           {/* Adjusted text size for decorative characters to match new heading size */}
-          <span className="absolute top-0 left-[26.5%] translate-x-[20px] translate-y-[12px] text-2xl text-[#19ff7d]">
+          {/* <span className="absolute top-0 left-[26.5%] translate-x-[20px] translate-y-[12px] text-2xl text-[#19ff7d]">
             ˇ
-          </span>
+          </span> */}
         </Link>
         <nav className="ml-auto hidden md:flex gap-6 text-sm font-medium">
           <HoverUnderlineLink href="#program">Program</HoverUnderlineLink>
@@ -116,21 +116,21 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className=" text-4xl sm:text-6xl font-bold text-[#19ff7d] font-vina-sans drop-shadow-lg relative" // Changed to text-6xl for consistent size
             >
-              Beh Niznou Hutkou
+              Beh Srdcom i telom <br /> v Niznej Hutke
               {/* Adjusted text size for decorative characters to match new heading size */}
-              <span className="absolute top-0 left-[36%] -translate-x-[12px] translate-y-[5px] text-4xl text-[#19ff7d]">
+              <span className="absolute bottom-1 sm:bottom-5 left-[34%]   -translate-x-[12px] translate-y-[5px] text-4xl text-[#19ff7d]">
                 ˇ
               </span>
              
             </motion.h1>
-            <motion.p
+            {/* <motion.p
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               className="mt-4 text-xl lg:text-2xl text-white font-sans"
             >
               Beh srdcom i telom
-            </motion.p>
+            </motion.p> */}
             <motion.p
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}

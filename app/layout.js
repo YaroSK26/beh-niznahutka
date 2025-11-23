@@ -17,9 +17,9 @@ const vinaSansFont = localFont({
 });
 
 export const metadata = {
-  title: "Beh Nižnou Hutkou",
+  title: "Beh Srdcom i telom",
   description:
-    "Oficiálna stránka behu Nižnou Hutkou. Pridajte sa k nám na každoročnom bežeckom podujatí a zažite nezabudnuteľnú atmosféru, súťaživosť a komunitu.",
+    "Oficiálna stránka behu Srdcom i telom v Nižnej hutke. Pridajte sa k nám na každoročnom bežeckom podujatí a zažite nezabudnuteľnú atmosféru, súťaživosť a komunitu.",
 };
 
 export default function RootLayout({ children }) {
