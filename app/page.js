@@ -27,7 +27,7 @@ export default function Home() {
 
   // Set the target date for the main run (September 28, 15:00)
   // Assuming the current year is 2025 based on the provided context date.
-  const eventTargetDate = "2025-09-28T14:00:00";
+  const eventTargetDate = "2026-09-20T14:00:00";
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-black to-[#05371b] text-white">
@@ -37,13 +37,10 @@ export default function Home() {
           href="/"
           className="flex items-center justify-center text-[#19ff7d] font-bold text-4xl font-vina-sans h-full pl-2 relative" // Changed to text-4xl for consistent size
         >
-          HUTCANSKA 5
+          Beh Niznou Hutkou
           {/* Adjusted text size for decorative characters to match new heading size */}
-          <span className="absolute top-0 left-[20%] translate-x-[20px] translate-y-[10px] text-2xl text-[#19ff7d]">
+          <span className="absolute top-0 left-[26.5%] translate-x-[20px] translate-y-[12px] text-2xl text-[#19ff7d]">
             ˇ
-          </span>
-          <span className="absolute top-0 left-[50%] translate-x-[47.5px] translate-y-[10px] text-2xl text-[#19ff7d]">
-            ´
           </span>
         </Link>
         <nav className="ml-auto hidden md:flex gap-6 text-sm font-medium">
@@ -119,14 +116,12 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
               className=" text-4xl sm:text-6xl font-bold text-[#19ff7d] font-vina-sans drop-shadow-lg relative" // Changed to text-6xl for consistent size
             >
-              HUTCANSKA 5 S VIEROU
+              Beh Niznou Hutkou
               {/* Adjusted text size for decorative characters to match new heading size */}
-              <span className="absolute top-0 left-[20%] -translate-x-[12px] -translate-y-[0px] text-4xl text-[#19ff7d]">
+              <span className="absolute top-0 left-[36%] -translate-x-[12px] translate-y-[5px] text-4xl text-[#19ff7d]">
                 ˇ
               </span>
-              <span className="absolute top-0 left-[50%] -translate-x-[15px] -translate-y-[0px] text-4xl text-[#19ff7d]">
-                ´
-              </span>
+             
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 50 }}
@@ -142,7 +137,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="mt-2 text-lg md:text-xl text-white font-sans"
             >
-              28. September 2025 | Strelnica, Nižná Hutka <br />
+              20. September 2026 | Strelnica, Nižná Hutka <br />
               Rozhodca: Peter Buc
             </motion.p>
             {/* Countdown Timer */}
@@ -163,7 +158,8 @@ export default function Home() {
                 className="mt-8 bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold text-lg px-8 py-6 rounded-full shadow-lg"
               >
                 <Link href="https://pretekaj.sk/hutcanska5" target="_blank">
-                  Registrovať sa
+                  {/* Registrovať sa */}
+                  Výsledky 2025
                 </Link>
               </Button>
             </motion.div>

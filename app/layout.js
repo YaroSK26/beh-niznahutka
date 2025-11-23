@@ -17,9 +17,9 @@ const vinaSansFont = localFont({
 });
 
 export const metadata = {
-  title: "Hutčanská 5 s vierou",
+  title: "Beh Nižnou Hutkou",
   description:
-    "Oficiálna stránka kresťanského behu Hutčanská 5 s vierou - beh srdcom i telom",
+    "Oficiálna stránka behu Nižnou Hutkou. Pridajte sa k nám na každoročnom bežeckom podujatí a zažite nezabudnuteľnú atmosféru, súťaživosť a komunitu.",
 };
 
 export default function RootLayout({ children }) {
