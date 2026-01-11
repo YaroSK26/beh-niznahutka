@@ -27,7 +27,7 @@ export default function Home() {
 
   // Set the target date for the main run (September 28, 15:00)
   // Assuming the current year is 2025 based on the provided context date.
-  const eventTargetDate = "2025-09-28T14:00:00";
+  const eventTargetDate = "2026-09-27T14:00:00";
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-black to-[#05371b] text-white">
@@ -137,7 +137,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="mt-2 text-lg md:text-xl text-white font-sans"
             >
-              28. September 2025 | Strelnica, Nižná Hutka <br />
+              27. September 2026 | Strelnica, Nižná Hutka <br />
               Rozhodca: Peter Buc
             </motion.p>
             {/* Countdown Timer */}
@@ -500,7 +500,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col items-center space-y-4 h-full">
                 <h3 className="text-2xl font-bold text-[#19ff7d] font-sans">
-                  Hlavný rozhodca: Peter Buc M:
+                  Hlavný rozhodca: Peter Buc:
                 </h3>
                 <p className="text-lg font-sans text-white ">
                   peter.buc59@gmail.com
