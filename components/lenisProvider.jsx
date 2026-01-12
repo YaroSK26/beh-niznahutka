@@ -5,6 +5,7 @@ import useLenis from "../components/lenis";
 function useScript(src) {
   useEffect(() => {
     const script = document.createElement("script");
+
     script.src = src;
     script.defer = true;
     script.dataset.useServiceCore = true;
