@@ -4,15 +4,51 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import SponsorsSlider from "@/components/sponsors-slider";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { MenuIcon, XIcon } from "lucide-react";
 import { HoverUnderlineLink } from "../components/hover-underline-link";
 import { Timeline, TimelineItem } from "@/components/timeline";
-import { CountdownTimer } from "@/components/countdown-timer"; // Import the new component
+import { CountdownTimer } from "@/components/countdown-timer";
+import { CookieBanner } from "@/components/cookie-banner";
+
+function MapPlaceholder({ onAccept }) {
+  return (
+    <div className="flex items-center justify-center w-full h-64 rounded-md border-2 border-[#19ff7d] bg-[#05371b]/50 text-center p-4">
+      <div>
+        <p className="text-white mb-3 text-sm">
+          Pre zobrazenie mapy je potrebný súhlas s cookies.
+        </p>
+        <button
+          onClick={onAccept}
+          className="bg-[#19ff7d] text-[#05371b] font-bold px-4 py-2 rounded-full text-sm hover:bg-[#19ff7d]/90 transition-colors cursor-pointer"
+        >
+          Prijať cookies
+        </button>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // Animation variants for sections
+  const [cookiesAccepted, setCookiesAccepted] = useState(null);
+
+  useEffect(() => {
+    const consent = localStorage.getItem("cookie-consent");
+    if (consent === "accepted") setCookiesAccepted(true);
+    else if (consent === "declined") setCookiesAccepted(false);
+  }, []);
+
+  const handleAccept = () => {
+    localStorage.setItem("cookie-consent", "accepted");
+    setCookiesAccepted(true);
+  };
+
+  const handleDecline = () => {
+    localStorage.setItem("cookie-consent", "declined");
+    setCookiesAccepted(false);
+  };
+
   const sectionVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -21,12 +57,11 @@ export default function Home() {
       transition: { duration: 0.8, ease: "easeOut" },
     },
   };
+
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Set the target date for the main run (September 28, 15:00)
-  // Assuming the current year is 2025 based on the provided context date.
   const eventTargetDate = "2026-09-27T14:00:00";
 
   return (
@@ -35,13 +70,9 @@ export default function Home() {
       <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] h-16 flex items-center justify-between px-4 lg:px-6 shadow-lg bg-[#05371b] rounded-full border-l-2 border-r-2 border-[#19ff7d] z-50">
         <Link
           href="/"
-          className="flex items-center justify-center text-[#19ff7d] font-bold text-3xl  sm:text-4xl font-vina-sans h-full pl-2 relative" // Changed to text-4xl for consistent size
+          className="flex items-center justify-center text-[#19ff7d] font-bold text-3xl sm:text-4xl font-vina-sans h-full pl-2 relative"
         >
           Beh Srdcom i telom
-          {/* Adjusted text size for decorative characters to match new heading size */}
-          {/* <span className="absolute top-0 left-[26.5%] translate-x-[20px] translate-y-[12px] text-2xl text-[#19ff7d]">
-            ˇ
-          </span> */}
         </Link>
         <nav className="ml-auto hidden md:flex gap-6 text-sm font-medium">
           <HoverUnderlineLink href="#program">Program</HoverUnderlineLink>
@@ -65,6 +96,7 @@ export default function Home() {
           )}
         </Button>
       </header>
+
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
         <motion.div
@@ -106,41 +138,42 @@ export default function Home() {
           </nav>
         </motion.div>
       )}
-      <main className="flex-1 pt-24 flex justify-center items-center flex-col">
+
+      <main className="flex-1 flex justify-center items-center flex-col">
         {/* Hero Section */}
-        <section className="relative w-full h-[400px] lg:h-[500px] flex items-center  justify-center text-center overflow-hidden p-4">
-          <div className="relative z-10 flex flex-col items-center justify-center container px-4  md:px-6 mx-auto">
+        <section className="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
+          <Image
+            src="/beh/1-min.jpg"
+            alt="Beh Srdcom i telom v Nižnej Hutke"
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
+            quality={85}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/40 to-black/75" />
+
+          <div className="relative z-10 flex flex-col items-center justify-center container px-4 md:px-6 mx-auto pt-20">
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className=" text-4xl sm:text-6xl font-bold text-[#19ff7d] font-vina-sans drop-shadow-lg relative" // Changed to text-6xl for consistent size
+              className="text-4xl sm:text-6xl font-bold text-[#19ff7d] font-vina-sans drop-shadow-lg relative"
             >
               Beh Srdcom i telom <br /> v Niznej Hutke
-              {/* Adjusted text size for decorative characters to match new heading size */}
-              <span className="absolute bottom-1 sm:bottom-5 left-[34%]   -translate-x-[12px] translate-y-[5px] text-4xl text-[#19ff7d]">
+              <span className="absolute bottom-1 sm:bottom-5 left-[34%] -translate-x-[12px] translate-y-[5px] text-4xl text-[#19ff7d]">
                 ˇ
               </span>
-             
             </motion.h1>
-            {/* <motion.p
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="mt-4 text-xl lg:text-2xl text-white font-sans"
-            >
-              Beh srdcom i telom
-            </motion.p> */}
             <motion.p
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="mt-2 text-lg md:text-xl text-white font-sans"
+              className="mt-2 text-lg md:text-xl text-white font-sans drop-shadow"
             >
               27. September 2026 | Strelnica, Nižná Hutka <br />
               Rozhodca: Peter Buc
             </motion.p>
-            {/* Countdown Timer */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
@@ -151,20 +184,20 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }} // Adjusted delay
+              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
             >
               <Button
                 asChild
                 className="mt-8 bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold text-lg px-8 py-6 rounded-full shadow-lg"
               >
                 <Link href="https://pretekaj.sk/hutcanska5" target="_blank">
-                  {/* Registrovať sa */}
                   Výsledky 2025
                 </Link>
               </Button>
             </motion.div>
           </div>
         </section>
+
         {/* Program Section */}
         <motion.section
           id="program"
@@ -179,17 +212,15 @@ export default function Home() {
               Program Podujatia 2025
             </h2>
             <div className="grid md:grid-cols-2 gap-12 items-start">
-              {/* Poster Image Placeholder - Left on desktop, top on mobile */}
               <div className="flex justify-center md:justify-start">
                 <div className="relative w-full max-w-md aspect-[3/4] rounded-lg overflow-hidden border-2 border-[#19ff7d] shadow-xl">
                   <Image
-                    src="/poster.png" // You can replace this with your actual poster image path
+                    src="/poster.png"
                     alt="Event Poster Placeholder"
                     layout="fill"
                   />
                 </div>
               </div>
-              {/* Timeline - Right on desktop, bottom on mobile */}
               <div>
                 <Timeline>
                   <TimelineItem
@@ -237,6 +268,7 @@ export default function Home() {
             </div>
           </div>
         </motion.section>
+
         {/* Routes Section */}
         <motion.section
           id="trasy"
@@ -256,18 +288,21 @@ export default function Home() {
                   5 km hlavný beh
                 </h3>
                 <p className="text-lg mb-4 font-sans">Pre skúsených bežcov.</p>
-                {/* Image for 5 km route */}
                 <div className="relative w-full h-64 mb-4 rounded-md overflow-hidden border-2 border-[#19ff7d]">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m48!1m12!1m3!1d8674.777698640837!2d21.3503050711282!3d48.660060940891974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m33!3e2!4m5!1s0x473f274dffbddbf1%3A0x614f86687427ac!2zVXJiw6Fyc2vDoSwgMDQwIDE4IE5pxb5uw6EgSHV0a2E!3m2!1d48.6555134!2d21.363513299999997!4m5!1s0x473f274dd1a31f59%3A0x13a2fb158c25e32d!2s040%2018%20Ni%C5%BEn%C3%A1%20Hutka%2C%20Slovensko!3m2!1d48.6594738!2d21.3604763!4m3!3m2!1d48.662298299999996!2d21.353879!4m3!3m2!1d48.6630098!2d21.360084699999998!4m3!3m2!1d48.662998599999995!2d21.3659832!4m3!3m2!1d48.6582875!2d21.3643347!4m3!3m2!1d48.654427399999996!2d21.364972599999998!5e1!3m2!1ssk!2ssk!4v1758983671914!5m2!1ssk!2ssk"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="5 km route map"
-                  ></iframe>
+                  {cookiesAccepted ? (
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m48!1m12!1m3!1d8674.777698640837!2d21.3503050711282!3d48.660060940891974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m33!3e2!4m5!1s0x473f274dffbddbf1%3A0x614f86687427ac!2zVXJiw6Fyc2vDoSwgMDQwIDE4IE5pxb5uw6EgSHV0a2E!3m2!1d48.6555134!2d21.363513299999997!4m5!1s0x473f274dd1a31f59%3A0x13a2fb158c25e32d!2s040%2018%20Ni%C5%BEn%C3%A1%20Hutka%2C%20Slovensko!3m2!1d48.6594738!2d21.3604763!4m3!3m2!1d48.662298299999996!2d21.353879!4m3!3m2!1d48.6630098!2d21.360084699999998!4m3!3m2!1d48.662998599999995!2d21.3659832!4m3!3m2!1d48.6582875!2d21.3643347!4m3!3m2!1d48.654427399999996!2d21.364972599999998!5e1!3m2!1ssk!2ssk!4v1758983671914!5m2!1ssk!2ssk"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="5 km route map"
+                    />
+                  ) : (
+                    <MapPlaceholder onAccept={handleAccept} />
+                  )}
                 </div>
                 <Button
                   asChild
@@ -282,6 +317,7 @@ export default function Home() {
                   </Link>
                 </Button>
               </div>
+
               <div className="bg-[#05371b] p-6 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-bold mb-2 text-[#19ff7d] font-sans">
                   500m detský beh
@@ -289,18 +325,21 @@ export default function Home() {
                 <p className="text-lg mb-4 font-sans">
                   Zábavná trasa pre najmenších.
                 </p>
-                {/* Image for Kids route */}
                 <div className="relative w-full h-64 mb-4 rounded-md overflow-hidden border-2 border-[#19ff7d]">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d1084.471241279228!2d21.364561088783315!3d48.654295142826285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e2!4m3!3m2!1d48.6546137!2d21.365284499999998!4m3!3m2!1d48.6535078!2d21.3672225!4m3!3m2!1d48.6550825!2d21.3644847!4m3!3m2!1d48.6546982!2d21.3653007!5e1!3m2!1ssk!2ssk!4v1759085145372!5m2!1ssk!2ssk"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Kids route map"
-                  ></iframe>
+                  {cookiesAccepted ? (
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d1084.471241279228!2d21.364561088783315!3d48.654295142826285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e2!4m3!3m2!1d48.6546137!2d21.365284499999998!4m3!3m2!1d48.6535078!2d21.3672225!4m3!3m2!1d48.6550825!2d21.3644847!4m3!3m2!1d48.6546982!2d21.3653007!5e1!3m2!1ssk!2ssk!4v1759085145372!5m2!1ssk!2ssk"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Kids route map"
+                    />
+                  ) : (
+                    <MapPlaceholder onAccept={handleAccept} />
+                  )}
                 </div>
                 <Button
                   asChild
@@ -318,6 +357,7 @@ export default function Home() {
             </div>
           </div>
         </motion.section>
+
         {/* Registration Section */}
         <motion.section
           id="registracia"
@@ -330,7 +370,6 @@ export default function Home() {
           <div className="container px-4 md:px-6 text-center relative mx-auto">
             <h2 className="text-5xl font-bold mb-8 text-[#19ff7d] font-vina-sans relative">
               Registracia 2025
-              {/* Adjusted text size for decorative characters to match new heading size */}
               <span className="absolute top-0 left-[50%] translate-x-[-10px] -translate-y-[0px] text-4xl text-[#19ff7d]">
                 ´
               </span>
@@ -339,7 +378,6 @@ export default function Home() {
               Registrovať sa môžete online aj osobne, osobne však bude poplatok
               väčší. Štartovné čísla, spinky, zoznam účastníkov budú pripravené.
             </p>
-
             <Button
               asChild
               className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold text-lg px-8 py-6 rounded-full shadow-lg"
@@ -354,6 +392,7 @@ export default function Home() {
             </Button>
           </div>
         </motion.section>
+
         {/* Sponsors Section */}
         <motion.section
           id="sponzori"
@@ -366,7 +405,6 @@ export default function Home() {
           <div className="container px-4 md:px-6 text-center relative mx-auto">
             <h2 className="text-5xl font-bold mb-12 text-[#19ff7d] font-vina-sans relative">
               Nasi Sponzori 2025
-              {/* Adjusted text size for decorative characters to match new heading size */}
               <span className="absolute top-0 left-[50%] -translate-x-[115px] -translate-y-[0px] text-4xl text-[#19ff7d]">
                 ˇ
               </span>
@@ -388,61 +426,25 @@ export default function Home() {
               Fotky 2025
             </h2>
             <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="../beh/1-min.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="../beh/1-min.jpg"
-                  alt="Image 1"
-                  className="w-60 h-60 object-cover"
-                />
-              </a>
-              <a
-                href="../beh/2-min.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="../beh/2-min.jpg"
-                  alt="Image 2"
-                  className="w-60 h-60 object-cover"
-                />
-              </a>
-              <a
-                href="../beh/3-min.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="../beh/3-min.jpg"
-                  alt="Image 3"
-                  className="w-60 h-60 object-cover"
-                />
-              </a>
-              <a
-                href="../beh/8-min.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="../beh/8-min.jpg"
-                  alt="Image 8"
-                  className="w-60 h-60 object-cover"
-                />
-              </a>
-              <a
-                href="../beh/10-min.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="../beh/10-min.jpg"
-                  alt="Image 10"
-                  className="w-60 h-60 object-cover"
-                />
-              </a>
+              {[
+                { src: "/beh/1-min.jpg", alt: "Beh Srdcom i telom — foto 1" },
+                { src: "/beh/2-min.jpg", alt: "Beh Srdcom i telom — foto 2" },
+                { src: "/beh/3-min.jpg", alt: "Beh Srdcom i telom — foto 3" },
+                { src: "/beh/8-min.jpg", alt: "Beh Srdcom i telom — foto 4" },
+                { src: "/beh/10-min.jpg", alt: "Beh Srdcom i telom — foto 5" },
+              ].map(({ src, alt }) => (
+                <a key={src} href={src} target="_blank" rel="noopener noreferrer" className="overflow-hidden rounded-md">
+                  <Image
+                    src={src}
+                    alt={alt}
+                    width={240}
+                    height={240}
+                    className="w-60 h-60 object-cover hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                    sizes="240px"
+                  />
+                </a>
+              ))}
             </div>
             <br />
             <Button
@@ -493,16 +495,16 @@ export default function Home() {
                 >
                   www.niznahutka.sk
                 </HoverUnderlineLink>
-                <p className="text-lg font-sans text-white ">
+                <p className="text-lg font-sans text-white">
                   starosta@niznahutka.sk
                 </p>
                 <p className="text-lg font-sans">+421 903 553 735</p>
               </div>
               <div className="flex flex-col items-center space-y-4 h-full">
                 <h3 className="text-2xl font-bold text-[#19ff7d] font-sans">
-                  Hlavný rozhodca: Peter Buc:
+                  Hlavný rozhodca: Peter Buc
                 </h3>
-                <p className="text-lg font-sans text-white ">
+                <p className="text-lg font-sans text-white">
                   peter.buc59@gmail.com
                 </p>
                 <p className="text-lg font-sans">+421 905 299 189</p>
@@ -520,13 +522,13 @@ export default function Home() {
                 />
                 <HoverUnderlineLink
                   href="https://www.srdcomitelom.sk/"
-                  className="text-lg font-sans text-white "
+                  className="text-lg font-sans text-white"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   www.srdcomitelom.sk
                 </HoverUnderlineLink>
-                <p className="text-lg font-sans text-white ">
+                <p className="text-lg font-sans text-white">
                   srdcomitelom@gmail.com
                 </p>
                 <p className="text-lg font-sans">+421 917 085 569</p>
@@ -534,8 +536,9 @@ export default function Home() {
             </div>
           </div>
         </motion.section>
-        <footer className="w-full py-4 text-center text-sm   ">
-          <p>
+
+        <footer className="w-full py-6 text-center text-sm border-t border-[#19ff7d]/20">
+          <p className="mb-2">
             Stránku vytvoril{" "}
             <a
               href="https://www.jaroslav-portfolio.eu/"
@@ -546,8 +549,21 @@ export default function Home() {
               Jaroslav Barabáš
             </a>
           </p>
+          <p className="flex justify-center gap-4 text-xs text-white/60">
+            <Link href="/ochrana-sukromia" className="hover:text-[#19ff7d] transition-colors">
+              Ochrana súkromia
+            </Link>
+            <span>·</span>
+            <Link href="/cookies" className="hover:text-[#19ff7d] transition-colors">
+              Zásady cookies
+            </Link>
+          </p>
         </footer>
       </main>
+
+      {cookiesAccepted === null && (
+        <CookieBanner onAccept={handleAccept} onDecline={handleDecline} />
+      )}
     </div>
   );
 }
