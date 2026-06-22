@@ -75,6 +75,7 @@ export default function Home() {
           Beh Srdcom i telom
         </Link>
         <nav className="ml-auto hidden md:flex gap-6 text-sm font-medium">
+          <HoverUnderlineLink href="#hostia">Hostia</HoverUnderlineLink>
           <HoverUnderlineLink href="#program">Program</HoverUnderlineLink>
           <HoverUnderlineLink href="#trasy">Trasy</HoverUnderlineLink>
           <HoverUnderlineLink href="#registracia">
@@ -107,6 +108,13 @@ export default function Home() {
           className="fixed inset-0 bg-[#05371b]/95 backdrop-blur-md z-40 flex flex-col items-center justify-center md:hidden pt-14"
         >
           <nav className="flex flex-col gap-6 text-2xl font-bold text-white">
+            <Link
+              href="#hostia"
+              className="hover:underline underline-offset-4"
+              onClick={toggleMobileMenu}
+            >
+              Hostia
+            </Link>
             <Link
               href="#program"
               className="hover:underline underline-offset-4"
@@ -197,6 +205,81 @@ export default function Home() {
             </motion.div>
           </div>
         </section>
+
+        {/* Guests Section */}
+        <motion.section
+          id="hostia"
+          className="w-full py-16 md:py-24 text-white"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+        >
+          <div className="container px-4 md:px-6 mx-auto">
+            <h2 className="text-5xl font-bold text-center mb-12 text-[#19ff7d] font-vina-sans">
+              Hostia 2026
+            </h2>
+            <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+              <div className="flex flex-col bg-[#05371b] rounded-xl border-2 border-[#19ff7d] overflow-hidden shadow-xl transition-shadow duration-300 hover:shadow-[0_0_32px_0_rgba(25,255,125,0.25)]">
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src="/dusan-havrila.jpg"
+                    alt="Dušan Havrila"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#05371b] to-transparent" />
+                </div>
+                <div className="px-6 pb-6 text-center -mt-2">
+                  <h3 className="text-2xl font-bold text-[#19ff7d] font-sans mb-1">
+                    Dušan Havrila
+                  </h3>
+                  <p className="text-xs text-[#19ff7d]/70 font-sans mb-4 uppercase tracking-widest">
+                    Evanjelický farár
+                  </p>
+                  <p className="text-white/85 font-sans leading-relaxed text-sm mb-5">
+                    PaedDr. Dušan Havrila, PhD. pôsobí ako zborový farár ECAV
+                    v Košiciach a duchovný správca evanjelického gymnázia
+                    J. A. Komenského. Je konseniorom Košického seniorátu a
+                    nositeľom Ceny mesta Košice za dlhoročnú verejnoprospešnú
+                    a ekumenickú činnosť.
+                  </p>
+                  
+                </div>
+              </div>
+
+              <div className="flex flex-col bg-[#05371b] rounded-xl border-2 border-[#19ff7d] overflow-hidden shadow-xl transition-shadow duration-300 hover:shadow-[0_0_32px_0_rgba(25,255,125,0.25)]">
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src="/jakub-marton.jpg"
+                    alt="Jakub Marton"
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#05371b] to-transparent" />
+                </div>
+                <div className="px-6 pb-6 text-center -mt-2">
+                  <h3 className="text-2xl font-bold text-[#19ff7d] font-sans mb-1">
+                    Jakub Marton
+                  </h3>
+                  <p className="text-xs text-[#19ff7d]/70 font-sans mb-4 uppercase tracking-widest">
+                    Športovec & Tréner
+                  </p>
+                  <p className="text-white/85 font-sans leading-relaxed text-sm mb-5">
+                    Certifikovaný osobný tréner a vášnivý športovec z Košíc.
+                    Dokončil Ironman 70.3, ultramaratón aj výstup na himalájsky
+                    vrchol Mera Peak (6&nbsp;476 m n. m.) — a to len zlomok jeho
+                    športových výkonov. Klientom všetkých vekových kategórií
+                    pomáha objavovať radosť z pohybu a zdravého životného štýlu.
+                  </p>
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.section>
 
         {/* Program Section */}
         <motion.section
@@ -425,7 +508,7 @@ export default function Home() {
             <h2 className="text-5xl font-bold mb-12 text-[#19ff7d] font-vina-sans relative">
               Fotky 2025
             </h2>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
               {[
                 { src: "/beh/1-min.jpg", alt: "Beh Srdcom i telom — foto 1" },
                 { src: "/beh/2-min.jpg", alt: "Beh Srdcom i telom — foto 2" },
@@ -433,15 +516,14 @@ export default function Home() {
                 { src: "/beh/8-min.jpg", alt: "Beh Srdcom i telom — foto 4" },
                 { src: "/beh/10-min.jpg", alt: "Beh Srdcom i telom — foto 5" },
               ].map(({ src, alt }) => (
-                <a key={src} href={src} target="_blank" rel="noopener noreferrer" className="overflow-hidden rounded-md">
+                <a key={src} href={src} target="_blank" rel="noopener noreferrer" className="overflow-hidden rounded-md aspect-square relative block">
                   <Image
                     src={src}
                     alt={alt}
-                    width={240}
-                    height={240}
-                    className="w-60 h-60 object-cover hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
                     loading="lazy"
-                    sizes="240px"
+                    sizes="(max-width: 640px) 50vw, 20vw"
                   />
                 </a>
               ))}
