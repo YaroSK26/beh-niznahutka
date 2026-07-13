@@ -57,7 +57,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-roboto)", "sans-serif"],
-        "vina-sans": ["var(--font-vina-sans)", "sans-serif"],
+        "vina-sans": ["var(--font-black-mango)", "sans-serif"],
       },
     },
   },

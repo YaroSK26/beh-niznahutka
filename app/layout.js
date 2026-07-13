@@ -9,6 +9,12 @@ const robotoFont = localFont({
   weight: "100 900",
 });
 
+const blackMangoFont = localFont({
+  src: "./fonts/BlackMango.ttf",
+  variable: "--font-black-mango",
+  weight: "400",
+});
+
 const vinaSansFont = localFont({
   src: "./fonts/VinaSans.ttf",
   variable: "--font-vina-sans",
@@ -126,7 +132,7 @@ export default function RootLayout({ children }) {
       </head>
       <LenisProvider>
         <body
-          className={`${robotoFont.variable} ${vinaSansFont.variable} font-sans antialiased`}
+          className={`${robotoFont.variable} ${vinaSansFont.variable} ${blackMangoFont.variable} font-sans antialiased`}
         >
           {children}
         </body>

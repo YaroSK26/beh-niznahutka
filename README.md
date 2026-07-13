@@ -38,7 +38,22 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 intersport
 bezeckepotreby
-kaufland banany
-odermanski 
+kaufland banany 
+odermanski  - vybavene 
+tpa
+multisport
+kebabizna
+pebar 
+exoduc coworking
+biblia a financie
+patty  - vybavene 
 
 mama sisky 
+mas vetvu 
+
+
+detsky beh pred hlavnym
+hudubny program ? alebo co po vyhodnoteni? 
+
+
+

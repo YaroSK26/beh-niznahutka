@@ -3,19 +3,19 @@ import Image from "next/image";
 
 // Konfigurácia sponzorov - vynesená do vlastnej konštanty
 const SPONSORS_DATA = [
-  { name: "Srdcom i telom", logo: "/sponzori/srdcomitelom.png" },
-  { name: "Pebar", logo: "/sponzori/pebar.png" },
-  { name: "Kaufland", logo: "/sponzori/kaufland.png" },
-  { name: "Exodus Coworking", logo: "/sponzori/logo-exodus.svg" },
-  { name: "Zachej", logo: "/sponzori/zachej.png" },
-  { name: "ProCare", logo: "/sponzori/procare.svg" },
-  { name: "Fresh ", logo: "/sponzori/fresh.svg" },
-  { name: "Online Relax", logo: "/sponzori/logo-onlinerelax.png" },
-  { name: "Kalap", logo: "/sponzori/kalap.jpg" },
-  { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
-  { name: "Mercedes-Benz", logo: "/sponzori/mercedes.png" },
-  { name: "Sedem Vaša kreatívna ", logo: "/sponzori/sedem.webp" },
-  { name: "Biblia a financie", logo: "/sponzori/baf.png" },
+  { name: "Srdcom i telom", logo: "/sponzori2025/srdcomitelom.png" },
+  { name: "Pebar", logo: "/sponzori2025/pebar.png" },
+  { name: "Kaufland", logo: "/sponzori2025/kaufland.png" },
+  { name: "Exodus Coworking", logo: "/sponzori2025/logo-exodus.svg" },
+  { name: "Zachej", logo: "/sponzori2025/zachej.png" },
+  { name: "ProCare", logo: "/sponzori2025/procare.svg" },
+  { name: "Fresh ", logo: "/sponzori2025/fresh.svg" },
+  { name: "Online Relax", logo: "/sponzori2025/logo-onlinerelax.png" },
+  { name: "Kalap", logo: "/sponzori2025/kalap.jpg" },
+  { name: "Masážny salón Patty", logo: "/sponzori2025/patty.png" },
+  { name: "Mercedes-Benz", logo: "/sponzori2025/mercedes.png" },
+  { name: "Sedem Vaša kreatívna ", logo: "/sponzori2025/sedem.webp" },
+  { name: "Biblia a financie", logo: "/sponzori2025/baf.png" },
 ];
 
 // Jednotlivý sponzor komponent pre lepšiu čitateľnosť
