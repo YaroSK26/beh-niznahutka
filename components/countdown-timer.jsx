@@ -72,7 +72,7 @@ export function CountdownTimer({ targetDate }) {
       {timerComponents.length ? (
         timerComponents
       ) : (
-        <span className="text-2xl md:text-3xl font-bold text-[#19ff7d] font-vina-sans">
+        <span className="text-2xl md:text-3xl font-bold text-[#19ff7d] font-vina-sans uppercase">
          Vidime sa o rok!
         </span>
       )}

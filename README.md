@@ -52,8 +52,3 @@ mama sisky
 mas vetvu 
 
 
-detsky beh pred hlavnym
-hudubny program ? alebo co po vyhodnoteni? 
-
-
-

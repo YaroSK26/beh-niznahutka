@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import SponsorsSlider from "@/components/sponsors-slider";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { MenuIcon, XIcon } from "lucide-react";
+import { MenuIcon, XIcon, ChevronLeft, ChevronRight } from "lucide-react";
 import { HoverUnderlineLink } from "../components/hover-underline-link";
 import { Timeline, TimelineItem } from "@/components/timeline";
 import { CountdownTimer } from "@/components/countdown-timer";
@@ -32,6 +32,8 @@ function MapPlaceholder({ onAccept }) {
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [cookiesAccepted, setCookiesAccepted] = useState(null);
+  const sponsorYears = [2025, 2026];
+  const [sponsorYear, setSponsorYear] = useState(2026);
 
   useEffect(() => {
     const consent = localStorage.getItem("cookie-consent");
@@ -70,7 +72,7 @@ export default function Home() {
       <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] h-16 flex items-center justify-between px-4 lg:px-6 shadow-lg bg-[#05371b] rounded-full border-l-2 border-r-2 border-[#19ff7d] z-50">
         <Link
           href="/"
-          className="flex items-center justify-center text-[#19ff7d] font-bold text-3xl sm:text-4xl font-vina-sans  h-full pl-2 relative"
+          className="flex items-center justify-center text-[#19ff7d] font-bold text-3xl sm:text-4xl font-vina-sans uppercase h-full pl-2 relative"
         >
           Beh Srdcom i telom
         </Link>
@@ -166,7 +168,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex flex-col items-center gap-6 text-4xl sm:text-6xl font-bold text-[#19ff7d] font-vina-sans  drop-shadow-lg"
+              className="flex flex-col items-center gap-6 text-4xl sm:text-6xl font-bold text-[#19ff7d] font-vina-sans uppercase drop-shadow-lg"
             >
               <span>Beh Srdcom i telom</span>
               <span>v Nižnej Hutke</span>
@@ -179,6 +181,14 @@ export default function Home() {
             >
               27. September 2026 | Strelnica, Nižná Hutka <br />
               Rozhodca: Peter Buc
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              className="mt-2 text-lg md:text-xl font-bold text-[#19ff7d] font-sans drop-shadow"
+            >
+              Vylepšená trasa, čisto asfalt!
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -224,7 +234,7 @@ export default function Home() {
           viewport={{ once: true, amount: 0.1 }}
         >
           <div className="container px-4 md:px-6 mx-auto ">
-            <h2 className="text-5xl font-bold text-center mb-12 text-[#19ff7d] font-vina-sans">
+            <h2 className="text-5xl font-bold text-center mb-12 text-[#19ff7d] font-vina-sans uppercase">
               Program Podujatia 2026
             </h2>
             <div className="grid md:grid-cols-2 gap-12 items-start">
@@ -251,14 +261,15 @@ export default function Home() {
                   /> */}
                   <TimelineItem
                     time="14:00"
-                    title="Štart hlavného behu"
-                    description="Trasa 5 km pre dospelých."
-                  />
-                  <TimelineItem
-                    time="14:10"
                     title="Štart detského behu"
                     description="Trasa 500 m pre najmenších."
                   />
+                  <TimelineItem
+                    time="14:30"
+                    title="Štart hlavného behu"
+                    description="Trasa 5 km pre dospelých."
+                  />
+                  
                   <TimelineItem
                     time="15:00"
                     title="Občerstvenie"
@@ -273,11 +284,6 @@ export default function Home() {
                     time="15:30"
                     title="Vyhodnotenie + poďakovanie + tombola"
                     description="Vyhlásenie víťazov, poďakovanie a tombola."
-                  />
-                  <TimelineItem
-                    time="16:00"
-                    title="Hudobný program"
-                    description="Koncert skupiny Kalap."
                   />
                 </Timeline>
               </div>
@@ -294,7 +300,7 @@ export default function Home() {
           viewport={{ once: true, amount: 0.1 }}
         >
           <div className="container px-4 md:px-6 mx-auto">
-            <h2 className="text-5xl font-bold text-center mb-12 text-[#19ff7d] font-vina-sans">
+            <h2 className="text-5xl font-bold text-center mb-12 text-[#19ff7d] font-vina-sans uppercase">
               Hostia 2026
             </h2>
             <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
@@ -367,7 +373,7 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <div className="container px-4 md:px-6 mx-auto">
-            <h2 className="text-5xl font-bold text-center mb-12 text-[#19ff7d] font-vina-sans">
+            <h2 className="text-5xl font-bold text-center mb-12 text-[#19ff7d] font-vina-sans uppercase">
               Trasy 2026
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
@@ -379,13 +385,13 @@ export default function Home() {
                 <div className="relative w-full h-64 mb-4 rounded-md overflow-hidden border-2 border-[#19ff7d]">
                   {cookiesAccepted ? (
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m48!1m12!1m3!1d8674.777698640837!2d21.3503050711282!3d48.660060940891974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m33!3e2!4m5!1s0x473f274dffbddbf1%3A0x614f86687427ac!2zVXJiw6Fyc2vDoSwgMDQwIDE4IE5pxb5uw6EgSHV0a2E!3m2!1d48.6555134!2d21.363513299999997!4m5!1s0x473f274dd1a31f59%3A0x13a2fb158c25e32d!2s040%2018%20Ni%C5%BEn%C3%A1%20Hutka%2C%20Slovensko!3m2!1d48.6594738!2d21.3604763!4m3!3m2!1d48.662298299999996!2d21.353879!4m3!3m2!1d48.6630098!2d21.360084699999998!4m3!3m2!1d48.662998599999995!2d21.3659832!4m3!3m2!1d48.6582875!2d21.3643347!4m3!3m2!1d48.654427399999996!2d21.364972599999998!5e1!3m2!1ssk!2ssk!4v1758983671914!5m2!1ssk!2ssk"
+                      src="https://www.google.com/maps/embed?pb=!1m48!1m12!1m3!1d8022.395670059714!2d21.36205566119287!3d48.65594077833344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m33!3e2!4m3!3m2!1d48.654517!2d21.3655136!4m3!3m2!1d48.659414299999995!2d21.3605523!4m3!3m2!1d48.6594208!2d21.356633499999997!4m3!3m2!1d48.6695219!2d21.3562981!4m3!3m2!1d48.6638448!2d21.3536841!4m3!3m2!1d48.6586863!2d21.3605952!4m3!3m2!1d48.656368699999994!2d21.3597526!4m3!3m2!1d48.6545451!2d21.365497599999998!5e1!3m2!1ssk!2ssk!4v1784736319283!5m2!1ssk!2ssk"
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
                       allowFullScreen=""
                       loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
+                      referrerPolicy="strict-origin-when-cross-origin"
                       title="5 km route map"
                     />
                   ) : (
@@ -397,7 +403,7 @@ export default function Home() {
                   className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold rounded-full shadow-lg"
                 >
                   <Link
-                    href="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d1084.471241279228!2d21.364561088783315!3d48.654295142826285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e2!4m3!3m2!1d48.6546137!2d21.365284499999998!4m3!3m2!1d48.6535078!2d21.3672225!4m3!3m2!1d48.6550825!2d21.3644847!4m3!3m2!1d48.6546982!2d21.3653007!5e1!3m2!1ssk!2ssk!4v1759085145372!5m2!1ssk!2ssk"
+                    href="https://maps.app.goo.gl/ijMjTJmKvhkLsRTa6"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -406,41 +412,13 @@ export default function Home() {
                 </Button>
               </div>
 
-              <div className="bg-[#05371b] p-6 rounded-lg shadow-lg">
+              <div className="bg-[#05371b] p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
                 <h3 className="text-2xl font-bold mb-2 text-[#19ff7d] font-sans">
                   500m detský beh
                 </h3>
                 <p className="text-lg mb-4 font-sans">
-                  Zábavná trasa pre najmenších.
+                  Trasa pre najmenších. Trasu, ktorá bude v areáli strelnice sa účastníci dozvedia priamo na podujatí.
                 </p>
-                <div className="relative w-full h-64 mb-4 rounded-md overflow-hidden border-2 border-[#19ff7d]">
-                  {cookiesAccepted ? (
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m32!1m12!1m3!1d1084.471241279228!2d21.364561088783315!3d48.654295142826285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m17!3e2!4m3!3m2!1d48.6546137!2d21.365284499999998!4m3!3m2!1d48.6535078!2d21.3672225!4m3!3m2!1d48.6550825!2d21.3644847!4m3!3m2!1d48.6546982!2d21.3653007!5e1!3m2!1ssk!2ssk!4v1759085145372!5m2!1ssk!2ssk"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen=""
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Kids route map"
-                    />
-                  ) : (
-                    <MapPlaceholder onAccept={handleAccept} />
-                  )}
-                </div>
-                <Button
-                  asChild
-                  className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold rounded-full shadow-lg"
-                >
-                  <Link
-                    href="https://www.google.com/maps/dir/48.6549185,21.3647534/48.655751,21.359613/48.6561994,21.3607563/48.6549733,21.3647796/@48.6553347,21.3596083,498m/data=!3m1!1e3!4m2!4m1!3e2?entry=ttu&g_ep=EgoyMDI1MDcxNS4xIKXMDSoASAFQAw%3D%3D"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Zobraziť na mape
-                  </Link>
-                </Button>
               </div>
             </div>
           </div>
@@ -456,7 +434,7 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <div className="container px-4 md:px-6 text-center relative mx-auto">
-            <h2 className="text-5xl font-bold mb-8 text-[#19ff7d] font-vina-sans relative">
+            <h2 className="text-5xl font-bold mb-8 text-[#19ff7d] font-vina-sans uppercase relative">
               Registracia 2026
               <span className="absolute top-0 left-[50%] translate-x-[-10px] -translate-y-[0px] text-4xl text-[#19ff7d]">
                 ´
@@ -491,10 +469,40 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <div className="container px-4 md:px-6 text-center relative mx-auto">
-            <h2 className="text-5xl font-bold mb-12 text-[#19ff7d] font-vina-sans relative">
-              Naši Sponzori 2026
-            </h2>
-            <SponsorsSlider />
+            <div className="flex items-center justify-center gap-4 mb-12">
+              <button
+                onClick={() =>
+                  setSponsorYear((y) =>
+                    sponsorYears[
+                      (sponsorYears.indexOf(y) - 1 + sponsorYears.length) %
+                        sponsorYears.length
+                    ]
+                  )
+                }
+                aria-label="Predchádzajúci ročník"
+                className="text-[#19ff7d] hover:scale-110 transition-transform cursor-pointer"
+              >
+                <ChevronLeft className="h-8 w-8" />
+              </button>
+              <h2 className="text-5xl font-bold text-[#19ff7d] font-vina-sans uppercase relative">
+                Naši Sponzori {sponsorYear}
+              </h2>
+              <button
+                onClick={() =>
+                  setSponsorYear(
+                    (y) =>
+                      sponsorYears[
+                        (sponsorYears.indexOf(y) + 1) % sponsorYears.length
+                      ]
+                  )
+                }
+                aria-label="Ďalší ročník"
+                className="text-[#19ff7d] hover:scale-110 transition-transform cursor-pointer"
+              >
+                <ChevronRight className="h-8 w-8" />
+              </button>
+            </div>
+            <SponsorsSlider year={sponsorYear} />
           </div>
         </motion.section>
 
@@ -507,7 +515,7 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <div className="container px-4 md:px-6 text-center relative mx-auto">
-            <h2 className="text-5xl font-bold mb-12 text-[#19ff7d] font-vina-sans relative">
+            <h2 className="text-5xl font-bold mb-12 text-[#19ff7d] font-vina-sans uppercase relative">
               Fotky 2025
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
@@ -562,7 +570,7 @@ export default function Home() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <div className="container px-4 md:px-6 text-center mx-auto">
-            <h2 className="text-5xl font-bold mb-8 text-[#19ff7d] font-vina-sans">
+            <h2 className="text-5xl font-bold mb-8 text-[#19ff7d] font-vina-sans uppercase">
               Kontakt
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch justify-center">

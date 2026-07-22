@@ -18,7 +18,7 @@ export default function OchranaSukromia() {
           ← Späť na hlavnú stránku
         </Link>
 
-        <h1 className="text-4xl font-bold text-[#19ff7d] font-vina-sans mb-2">
+        <h1 className="text-4xl font-bold text-[#19ff7d] font-vina-sans uppercase mb-2">
           Zásady ochrany osobných údajov
         </h1>
         <p className="text-white/60 text-sm mb-10">
