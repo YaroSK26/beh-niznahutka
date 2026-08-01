@@ -4,7 +4,7 @@ import Image from "next/image";
 // Konfigurácia sponzorov podľa ročníka
 const SPONSORS_BY_YEAR = {
   2025: [
-    { name: "Srdcom i telom", logo: "/sponzori/srdcomitelom.png" },
+    { name: "Srdcom i telom", logo: "/sponzori/srdcomitelom.png", large: true },
     { name: "Pebar", logo: "/sponzori/pebar.png" },
     { name: "Kaufland", logo: "/sponzori/kaufland.png" },
     { name: "Exodus Coworking", logo: "/sponzori/logo-exodus.svg" },
@@ -19,29 +19,31 @@ const SPONSORS_BY_YEAR = {
     { name: "Biblia a financie", logo: "/sponzori/baf.png" },
   ],
   2026: [
-    { name: "Srdcom i telom", logo: "/sponzori/srdcomitelom.png" },
+    { name: "Srdcom i telom", logo: "/sponzori/srdcomitelom.png", large: true },
     { name: "Pebar", logo: "/sponzori/pebar.png" },
-    { name: "Zachej", logo: "/sponzori/zachej.png" },
+    { name: "Kaufland", logo: "/sponzori/kaufland.png" },
     { name: "Exodus Coworking", logo: "/sponzori/logo-exodus.svg" },
-    { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
+    { name: "Zachej", logo: "/sponzori/zachej.png" },
     { name: "Bruxel Bike", logo: "/sponzori/bruxel.webp" },
     { name: "Aqua Pro", logo: "/sponzori/aquapro.png" },
-    { name: "Kalap", logo: "/sponzori/kalap.jpg" },
-    { name: "Kaufland", logo: "/sponzori/kaufland.png" },
     { name: "Curaprox", logo: "/sponzori/curaprox.png" },
+    { name: "Kalap", logo: "/sponzori/kalap.jpg" },
+    { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
     { name: "Sedem Vaša kreatívna ", logo: "/sponzori/sedem.webp" },
   ],
 };
 
 // Jednotlivý sponzor komponent pre lepšiu čitateľnosť
 function SponsorCard({ sponsor }) {
+  const width = sponsor.large ? 260 : 170;
+  const height = sponsor.large ? 140 : 90;
   return (
     <div className="flex items-center justify-center p-4 hover:scale-105 transition-transform duration-200">
       <Image
         src={sponsor.logo || "/placeholder.svg"}
         alt={`Logo ${sponsor.name}`}
-        width={170}
-        height={90}
+        width={width}
+        height={height}
         className="object-contain max-w-full h-auto"
         loading="lazy"
       />
