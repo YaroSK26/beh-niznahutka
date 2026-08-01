@@ -35,20 +35,16 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
 intersport
-bezeckepotreby
-kaufland banany 
-odermanski  - vybavene 
+kaufland banany
+odermanski - vybavene
 tpa
-multisport
 kebabizna
-pebar 
+pebar
 exoduc coworking
 biblia a financie
-patty  - vybavene 
+patty - vybavene
+;
+mas vetvu
 
-mama sisky 
-mas vetvu 
-
-
+TPA, KAUFLAND ASI MAME, BIBLIA A FINANCIE

@@ -69,14 +69,27 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-black to-[#05371b] text-white">
       {/* Header */}
-      <header className="fixed top-4 left-1/2 -translate-x-1/2 w-[calc(100%-1rem)] h-16 flex items-center justify-between px-4 lg:px-6 shadow-lg bg-[#05371b] rounded-full border-l-2 border-r-2 border-[#19ff7d] z-50">
+      <header className="fixed top-0 inset-x-0 h-16 md:h-20 flex items-center px-4 lg:px-8 bg-[#05371b]/75 backdrop-blur-md border-b border-[#19ff7d]/40 z-50">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="md:hidden text-white"
+          onClick={toggleMobileMenu}
+          aria-label="Toggle mobile menu"
+        >
+          {isMobileMenuOpen ? (
+            <XIcon className="h-6 w-6" />
+          ) : (
+            <MenuIcon className="h-6 w-6" />
+          )}
+        </Button>
         <Link
           href="/"
-          className="flex items-center justify-center text-[#19ff7d] font-bold text-3xl sm:text-4xl font-vina-sans uppercase h-full pl-2 relative"
+          className="absolute left-1/2 -translate-x-1/2 md:static md:left-auto md:translate-x-0 text-[#19ff7d] font-bold text-base sm:text-2xl md:text-xl lg:text-2xl font-vina-sans uppercase whitespace-nowrap tracking-wide"
         >
           Beh Srdcom i telom
         </Link>
-        <nav className="ml-auto hidden md:flex gap-6 text-sm font-medium">
+        <nav className="hidden md:flex gap-8 text-sm font-medium absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <HoverUnderlineLink href="#program">Program</HoverUnderlineLink>
           <HoverUnderlineLink href="#hostia">Hostia</HoverUnderlineLink>
           <HoverUnderlineLink href="#trasy">Trasy</HoverUnderlineLink>
@@ -86,17 +99,10 @@ export default function Home() {
           <HoverUnderlineLink href="#kontakt">Kontakt</HoverUnderlineLink>
         </nav>
         <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden ml-auto text-white"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
+          asChild
+          className="hidden md:inline-flex ml-auto bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold rounded-full text-base px-6 py-5"
         >
-          {isMobileMenuOpen ? (
-            <XIcon className="h-6 w-6" />
-          ) : (
-            <MenuIcon className="h-6 w-6" />
-          )}
+          <Link href="#registracia">Registrovať sa</Link>
         </Button>
       </header>
 
@@ -163,12 +169,12 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/65 to-black/85" />
 
-          <div className="relative z-10 flex flex-col items-center justify-center container px-4 md:px-6 mx-auto pt-20">
+          <div className="relative z-10 flex flex-col items-center justify-center container px-4 md:px-6 mx-auto pt-20 sm:pt-24">
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="flex flex-col items-center gap-6 text-4xl sm:text-6xl font-bold text-[#19ff7d] font-vina-sans uppercase drop-shadow-lg"
+              className="flex flex-col items-center gap-2 sm:gap-4 md:gap-6 text-2xl sm:text-5xl md:text-6xl font-bold text-[#19ff7d] font-vina-sans uppercase drop-shadow-lg"
             >
               <span>Beh Srdcom i telom</span>
               <span>v Nižnej Hutke</span>
@@ -177,18 +183,13 @@ export default function Home() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              className="mt-2 text-lg md:text-xl text-white font-sans drop-shadow"
+              className="mt-4 sm:mt-6 md:mt-8 text-xs sm:text-lg md:text-xl text-white font-sans drop-shadow"
             >
-              27. September 2026 | Strelnica, Nižná Hutka <br />
-              Rozhodca: Peter Buc
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-              className="mt-2 text-lg md:text-xl font-bold text-[#19ff7d] font-sans drop-shadow"
-            >
-              Vylepšená trasa, čisto asfalt!
+              27. September 2026 · Nižná Hutka
+              <br />
+              <span className="text-[#19ff7d] font-bold">
+                Vylepšená trasa, čisto asfalt!
+              </span>
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -201,18 +202,18 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-4 mt-8 justify-center"
+              className="flex flex-col sm:flex-row gap-3 mt-8 sm:mt-10 md:mt-12 justify-center"
             >
               <Button
                 asChild
-                className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold text-lg px-8 py-6 rounded-full shadow-lg"
+                className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold text-sm sm:text-lg px-6 sm:px-8 py-4 sm:py-6 rounded-full shadow-lg"
               >
                 <Link href="#registracia">Registrovať sa</Link>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="bg-transparent border-2 border-[#19ff7d] text-[#19ff7d] hover:text-[#19ff7d] hover:bg-transparent font-bold text-lg px-8 py-6 rounded-full"
+                className="bg-transparent border-2 border-[#19ff7d] text-[#19ff7d] hover:text-[#19ff7d] hover:bg-transparent font-bold text-sm sm:text-lg px-6 sm:px-8 py-4 sm:py-6 rounded-full"
               >
                 <Link href="https://pretekaj.sk/hutcanska5" target="_blank">
                   Výsledky 2025
@@ -237,18 +238,19 @@ export default function Home() {
             <h2 className="text-5xl font-bold text-center mb-12 text-[#19ff7d] font-vina-sans uppercase">
               Program Podujatia 2026
             </h2>
-            <div className="grid md:grid-cols-2 gap-12 items-start">
-              <div className="flex justify-center md:justify-start">
+            <div className="relative grid gap-8 md:grid-cols-[1fr_auto_1fr] md:gap-x-10 items-center">
+              {/* Desktop vertical line, centered on the middle (dot) column */}
+              <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-8 bottom-8 w-0.5 bg-[#19ff7d]"></div>
+              <div className="flex justify-center md:[grid-column:1] md:[grid-row:1/span_6] md:self-center">
                 <div className="relative w-full max-w-md aspect-[3/4] rounded-lg overflow-hidden border-2 border-[#19ff7d] shadow-xl">
                   <Image
-                    src="/poster2026.png"
+                    src="/plagat-druhyrocnik-beh2.png"
                     alt="Event Poster Placeholder"
                     layout="fill"
                   />
                 </div>
               </div>
-              <div>
-                <Timeline>
+              <Timeline>
                   <TimelineItem
                     time="12:30"
                     title="Registrácia účastníkov"
@@ -260,9 +262,9 @@ export default function Home() {
                     description="Duchovné zamyslenie (cca 10–15 min)."
                   /> */}
                   <TimelineItem
-                    time="14:00"
+                    time="13:30"
                     title="Štart detského behu"
-                    description="Trasa 500 m pre najmenších."
+                    description="Trasa 100 m,  500 m  pre deti."
                   />
                   <TimelineItem
                     time="14:30"
@@ -286,7 +288,6 @@ export default function Home() {
                     description="Vyhlásenie víťazov, poďakovanie a tombola."
                   />
                 </Timeline>
-              </div>
             </div>
           </div>
         </motion.section>
@@ -414,10 +415,10 @@ export default function Home() {
 
               <div className="bg-[#05371b] p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center">
                 <h3 className="text-2xl font-bold mb-2 text-[#19ff7d] font-sans">
-                  500m detský beh
+                  100 m, 500 m detský beh
                 </h3>
                 <p className="text-lg mb-4 font-sans">
-                  Trasa pre najmenších. Trasu, ktorá bude v areáli strelnice sa účastníci dozvedia priamo na podujatí.
+                  Trasa pre deti. Trasu, ktorá bude v areáli strelnice sa účastníci dozvedia priamo na podujatí.
                 </p>
               </div>
             </div>

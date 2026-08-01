@@ -45,10 +45,10 @@ export function CountdownTimer({ targetDate }) {
     if (value !== undefined) {
       timerComponents.push(
         <span key={interval} className="flex flex-col items-center">
-          <span className="text-4xl md:text-5xl font-bold text-[#19ff7d] font-vina-sans">
+          <span className="text-2xl sm:text-4xl md:text-5xl font-bold text-[#19ff7d] font-vina-sans">
             {String(value).padStart(2, "0")}
           </span>
-          <span className="text-sm md:text-base text-white font-sans uppercase">
+          <span className="text-xs sm:text-sm md:text-base text-white font-sans uppercase">
             {interval === "days"
               ? "dní"
               : interval === "hours"
@@ -68,7 +68,7 @@ export function CountdownTimer({ targetDate }) {
   }
 
   return (
-    <div className="mt-8 flex justify-center gap-4 md:gap-8">
+    <div className="mt-4 sm:mt-8 flex justify-center gap-2 sm:gap-4 md:gap-8">
       {timerComponents.length ? (
         timerComponents
       ) : (
