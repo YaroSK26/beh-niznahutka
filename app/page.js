@@ -93,7 +93,11 @@ export default function Home() {
           <HoverUnderlineLink href="#program">Program</HoverUnderlineLink>
           <HoverUnderlineLink href="#hostia">Hostia</HoverUnderlineLink>
           <HoverUnderlineLink href="#trasy">Trasy</HoverUnderlineLink>
-          <HoverUnderlineLink href="#registracia">
+          <HoverUnderlineLink
+            href="https://pretekaj.sk/sk/podujatia/hutcanska5/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Registrácia
           </HoverUnderlineLink>
           <HoverUnderlineLink href="#kontakt">Kontakt</HoverUnderlineLink>
@@ -102,7 +106,13 @@ export default function Home() {
           asChild
           className="hidden md:inline-flex ml-auto bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold rounded-full text-base px-6 py-5"
         >
-          <Link href="#registracia">Registrovať sa</Link>
+          <Link
+            href="https://pretekaj.sk/sk/podujatia/hutcanska5/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Registrovať sa
+          </Link>
         </Button>
       </header>
 
@@ -138,7 +148,9 @@ export default function Home() {
               Trasy
             </Link>
             <Link
-              href="#registracia"
+              href="https://pretekaj.sk/sk/podujatia/hutcanska5/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:underline underline-offset-4"
               onClick={toggleMobileMenu}
             >
@@ -450,7 +462,7 @@ export default function Home() {
               className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold text-lg px-8 py-6 rounded-full shadow-lg"
             >
               <Link
-                href="https://pretekaj.sk/hutcanska5"
+                href="https://pretekaj.sk/sk/podujatia/hutcanska5/registration"
                 target="_blank"
                 rel="noopener noreferrer"
               >

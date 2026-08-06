@@ -20,16 +20,17 @@ const SPONSORS_BY_YEAR = {
   ],
   2026: [
     { name: "Srdcom i telom", logo: "/sponzori/srdcomitelom.png", large: true },
-    { name: "Pebar", logo: "/sponzori/pebar.png" },
+    { name: "UNLP", logo: "/sponzori/unlp.png" },
     { name: "Kaufland", logo: "/sponzori/kaufland.png" },
-    { name: "Exodus Coworking", logo: "/sponzori/logo-exodus.svg" },
+    { name: "Curaprox", logo: "/sponzori/curaprox.png" },
     { name: "Zachej", logo: "/sponzori/zachej.png" },
     { name: "Bruxel Bike", logo: "/sponzori/bruxel.webp" },
     { name: "Aqua Pro", logo: "/sponzori/aquapro.png" },
-    { name: "Curaprox", logo: "/sponzori/curaprox.png" },
+    { name: "Exodus Coworking", logo: "/sponzori/logo-exodus.svg" },
     { name: "Kalap", logo: "/sponzori/kalap.jpg" },
     { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
     { name: "Sedem Vaša kreatívna ", logo: "/sponzori/sedem.webp" },
+    { name: "Pebar", logo: "/sponzori/pebar.png" },
   ],
 };
 
