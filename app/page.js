@@ -220,7 +220,13 @@ export default function Home() {
                 asChild
                 className="bg-[#19ff7d] text-[#05371b] hover:bg-[#19ff7d]/90 font-bold text-sm sm:text-lg px-6 sm:px-8 py-4 sm:py-6 rounded-full shadow-lg"
               >
-                <Link href="#registracia">Registrovať sa</Link>
+                <Link
+                  href="https://pretekaj.sk/sk/podujatia/hutcanska5/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Registrovať sa
+                </Link>
               </Button>
               <Button
                 asChild
