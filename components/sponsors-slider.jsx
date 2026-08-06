@@ -31,6 +31,7 @@ const SPONSORS_BY_YEAR = {
     { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
     { name: "Sedem Vaša kreatívna ", logo: "/sponzori/sedem.webp" },
     { name: "Pebar", logo: "/sponzori/pebar.png" },
+    { name: "Letná záhradka", logo: "/sponzori/letna_zahradka.png" },
   ],
 };
 
