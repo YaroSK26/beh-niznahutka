@@ -12,7 +12,7 @@ const SPONSORS_BY_YEAR = {
     { name: "ProCare", logo: "/sponzori/procare.svg" },
     { name: "Fresh ", logo: "/sponzori/fresh.svg" },
     { name: "Online Relax", logo: "/sponzori/logo-onlinerelax.png" },
-    { name: "Kalap", logo: "/sponzori/kalap.jpg" },
+    { name: "Kalap", logo: "/sponzori/kalap2.png", small: true },
     { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
     { name: "Mercedes-Benz", logo: "/sponzori/mercedes.png" },
     { name: "Sedem Vaša kreatívna ", logo: "/sponzori/sedem.webp" },
@@ -27,7 +27,7 @@ const SPONSORS_BY_YEAR = {
     { name: "Bruxel Bike", logo: "/sponzori/bruxel.webp" },
     { name: "Aqua Pro", logo: "/sponzori/aquapro.png" },
     { name: "Exodus Coworking", logo: "/sponzori/logo-exodus.svg" },
-    { name: "Kalap", logo: "/sponzori/kalap.jpg" },
+    { name: "Kalap", logo: "/sponzori/kalap2.png", small: true },
     { name: "Masážny salón Patty", logo: "/sponzori/patty.png" },
     { name: "Sedem Vaša kreatívna ", logo: "/sponzori/sedem.webp" },
     { name: "Pebar", logo: "/sponzori/pebar.png" },
@@ -37,8 +37,8 @@ const SPONSORS_BY_YEAR = {
 
 // Jednotlivý sponzor komponent pre lepšiu čitateľnosť
 function SponsorCard({ sponsor }) {
-  const width = sponsor.large ? 260 : 170;
-  const height = sponsor.large ? 140 : 90;
+  const width = sponsor.large ? 260 : sponsor.small ? 120 : 170;
+  const height = sponsor.large ? 140 : sponsor.small ? 64 : 90;
   return (
     <div className="flex items-center justify-center p-4 hover:scale-105 transition-transform duration-200">
       <Image
