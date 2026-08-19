@@ -33,6 +33,7 @@ const SPONSORS_BY_YEAR = {
     { name: "Pebar", logo: "/sponzori/pebar.png" },
     { name: "Letná záhradka", logo: "/sponzori/letna_zahradka.png" },
     { name: "Plus lekáreň", logo: "/sponzori/pluslekaren.png" },
+    { name: "Kebabizňa", logo: "/sponzori/kebabizna.png" },
   ],
 };
 
