@@ -20,6 +20,8 @@ const SPONSORS_BY_YEAR = {
   ],
   2026: [
     { name: "Srdcom i telom", logo: "/sponzori/srdcomitelom.png", large: true },
+    { name: "VSZP", logo: "/sponzori/vszp.png" },
+    { name: "Kebabizňa", logo: "/sponzori/kebabizna.png" },
     { name: "UNLP", logo: "/sponzori/unlp.png" },
     { name: "Kaufland", logo: "/sponzori/kaufland.png" },
     { name: "Curaprox", logo: "/sponzori/curaprox.png" },
@@ -33,16 +35,16 @@ const SPONSORS_BY_YEAR = {
     { name: "Pebar", logo: "/sponzori/pebar.png" },
     { name: "Letná záhradka", logo: "/sponzori/letna_zahradka.png" },
     { name: "Plus lekáreň", logo: "/sponzori/pluslekaren.png" },
-    { name: "Kebabizňa", logo: "/sponzori/kebabizna.png" },
+    { name: "Iba z dreva", logo: "/sponzori/ibazdreva.png" },
   ],
 };
 
 // Jednotlivý sponzor komponent pre lepšiu čitateľnosť
 function SponsorCard({ sponsor }) {
-  const width = sponsor.large ? 260 : sponsor.small ? 120 : 170;
-  const height = sponsor.large ? 140 : sponsor.small ? 64 : 90;
+  const width = sponsor.large ? 220 : sponsor.small ? 100 : 140;
+  const height = sponsor.large ? 118 : sponsor.small ? 54 : 74;
   return (
-    <div className="flex items-center justify-center p-4 hover:scale-105 transition-transform duration-200">
+    <div className="flex items-center justify-center p-2 hover:scale-105 transition-transform duration-200">
       <Image
         src={sponsor.logo || "/placeholder.svg"}
         alt={`Logo ${sponsor.name}`}
@@ -68,7 +70,7 @@ export default function SponsorsGrid({ year = 2025 }) {
         </h2>
 
         {sponsors.length > 0 ? (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2">
             {sponsors.map((sponsor) => (
               <SponsorCard key={sponsor.logo} sponsor={sponsor} />
             ))}

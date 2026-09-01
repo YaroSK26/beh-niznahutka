@@ -454,10 +454,7 @@ export default function Home() {
         >
           <div className="container px-4 md:px-6 text-center relative mx-auto">
             <h2 className="text-5xl font-bold mb-8 text-[#19ff7d] font-vina-sans uppercase relative">
-              Registracia 2026
-              <span className="absolute top-0 left-[50%] translate-x-[-10px] -translate-y-[0px] text-4xl text-[#19ff7d]">
-                ´
-              </span>
+              Registrácia 2026
             </h2>
             <p className="text-lg md:text-xl mb-6 font-sans">
               Registrovať sa môžete online aj osobne, osobne však bude poplatok
@@ -522,6 +519,41 @@ export default function Home() {
               </button>
             </div>
             <SponsorsSlider year={sponsorYear} />
+          </div>
+        </motion.section>
+
+        {/* VŠZP Section */}
+        <motion.section
+          id="vszp"
+          className="w-full py-16 md:py-24 text-white"
+          variants={sectionVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <div className="container px-4 md:px-6 mx-auto">
+            <div className="grid gap-8 md:grid-cols-2 items-center">
+              <div className="flex justify-center">
+                <div className="relative w-full max-w-md aspect-[3/4] rounded-lg overflow-hidden border-2 border-[#19ff7d] shadow-xl">
+                  <Image
+                    src="/vszp-plagat.png"
+                    alt="VŠZP plagát"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <div className="text-center md:text-left">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#19ff7d] font-vina-sans uppercase">
+                  VŠZP na podujatí
+                </h2>
+                <p className="text-lg md:text-xl font-sans">
+                  Všeobecná zdravotná poisťovňa bude priamo na podujatí s
+                  vlastným stánkom. Príďte si zmerať zdravie a dozvedieť sa
+                  viac o preventívnych programoch.
+                </p>
+              </div>
+            </div>
           </div>
         </motion.section>
 
