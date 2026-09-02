@@ -269,48 +269,47 @@ export default function Home() {
                 </div>
               </div>
               <Timeline>
-                  <TimelineItem
-                    time="12:30"
-                    title="Registrácia účastníkov"
-                    description="Príprava na podujatie."
-                  />
-                  {/* <TimelineItem
+                <TimelineItem
+                  time="12:30"
+                  title="Registrácia účastníkov"
+                  description="Príprava na podujatie."
+                />
+                {/* <TimelineItem
                     time="13:30"
                     title="Krátka kázeň / bohoslužba s farárkou"
                     description="Duchovné zamyslenie (cca 10–15 min)."
                   /> */}
-                  <TimelineItem
-                    time="13:30"
-                    title="Štart detského behu"
-                    description="Trasa 100 m,  500 m  pre deti."
-                  />
-                  <TimelineItem
-                    time="14:30"
-                    title="Štart hlavného behu"
-                    description="Trasa 5 km pre dospelých."
-                  />
-                  
-                  <TimelineItem
-                    time="15:00"
-                    title="Občerstvenie"
-                    description="Guláš pre bežcov."
-                  />
-                  <TimelineItem
-                    time="15:00-15:30"
-                    title="Panelová diskusia"
-                    description="Diskusia: Dušan Havrila + Jakub Marton."
-                  />
-                  <TimelineItem
-                    time="15:30"
-                    title="Vyhodnotenie + poďakovanie + tombola"
-                    description="Vyhlásenie víťazov, poďakovanie a tombola."
-                  />
-                </Timeline>
+                <TimelineItem
+                  time="13:30"
+                  title="Štart detského behu"
+                  description="Trasa 100 m,  500 m  pre deti."
+                />
+                <TimelineItem
+                  time="14:30"
+                  title="Štart hlavného behu"
+                  description="Trasa 5 km pre dospelých."
+                />
+
+                <TimelineItem
+                  time="15:00"
+                  title="Občerstvenie"
+                  description="Guláš pre bežcov."
+                />
+                <TimelineItem
+                  time="15:00-15:30"
+                  title="Panelová diskusia"
+                  description="Diskusia: Dušan Havrila + Jakub Marton."
+                />
+                <TimelineItem
+                  time="15:30"
+                  title="Vyhodnotenie + poďakovanie + tombola"
+                  description="Vyhlásenie víťazov, poďakovanie a tombola."
+                />
+              </Timeline>
             </div>
           </div>
         </motion.section>
 
-        
         {/* VŠZP Section */}
         <motion.section
           id="vszp"
@@ -338,8 +337,8 @@ export default function Home() {
                 </h2>
                 <p className="text-lg md:text-xl font-sans">
                   Všeobecná zdravotná poisťovňa bude priamo na podujatí s
-                  vlastným stánkom. Príďte si zmerať zdravie a dozvedieť sa
-                  viac o preventívnych programoch.
+                  vlastným stánkom. Príďte si dať zmerať zdravotné hodnoty
+                  (InBody, tlak a iné) alebo sa len tak poradiť.
                 </p>
               </div>
             </div>
@@ -472,7 +471,8 @@ export default function Home() {
                   100 m, 500 m detský beh
                 </h3>
                 <p className="text-lg mb-4 font-sans">
-                  Trasa pre deti. Trasu, ktorá bude v areáli strelnice sa účastníci dozvedia priamo na podujatí.
+                  Trasa pre deti. Trasu, ktorá bude v areáli strelnice sa
+                  účastníci dozvedia priamo na podujatí.
                 </p>
               </div>
             </div>
@@ -524,11 +524,12 @@ export default function Home() {
             <div className="flex items-center justify-center gap-4 mb-12">
               <button
                 onClick={() =>
-                  setSponsorYear((y) =>
-                    sponsorYears[
-                      (sponsorYears.indexOf(y) - 1 + sponsorYears.length) %
-                        sponsorYears.length
-                    ]
+                  setSponsorYear(
+                    (y) =>
+                      sponsorYears[
+                        (sponsorYears.indexOf(y) - 1 + sponsorYears.length) %
+                          sponsorYears.length
+                      ],
                   )
                 }
                 aria-label="Predchádzajúci ročník"
@@ -545,7 +546,7 @@ export default function Home() {
                     (y) =>
                       sponsorYears[
                         (sponsorYears.indexOf(y) + 1) % sponsorYears.length
-                      ]
+                      ],
                   )
                 }
                 aria-label="Ďalší ročník"
@@ -557,7 +558,6 @@ export default function Home() {
             <SponsorsSlider year={sponsorYear} />
           </div>
         </motion.section>
-
 
         <motion.section
           id="fotky"
