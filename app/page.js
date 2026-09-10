@@ -233,9 +233,12 @@ export default function Home() {
                 variant="outline"
                 className="bg-transparent border-2 border-[#19ff7d] text-[#19ff7d] hover:text-[#19ff7d] hover:bg-transparent font-bold text-sm sm:text-lg px-6 sm:px-8 py-4 sm:py-6 rounded-full"
               >
-                <Link href="https://pretekaj.sk/hutcanska5" target="_blank">
+                <a
+                  href="/vysledky-2025-hutcanska5.xlsx"
+                  download="vysledky-2025-hutcanska5.xlsx"
+                >
                   Výsledky 2025
-                </Link>
+                </a>
               </Button>
             </motion.div>
           </div>
