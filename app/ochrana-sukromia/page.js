@@ -3,7 +3,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Ochrana súkromia",
   description:
-    "Zásady ochrany osobných údajov webu Beh Srdcom i telom — niznahutkabeh.eu.",
+    "Zásady ochrany osobných údajov webu Beh Srdcom i telom - niznahutkabeh.eu.",
   robots: { index: false },
 };
 
@@ -36,7 +36,7 @@ export default function OchranaSukromia() {
             </p>
             <div className="bg-[#05371b] border border-[#19ff7d]/30 rounded-lg p-4 mt-3 space-y-1 text-sm">
               <p>
-                <strong>Jaroslav Barabáš — Srdcom i telom</strong>
+                <strong>Jaroslav Barabáš - Srdcom i telom</strong>
               </p>
               <p>IČO: 56652216</p>
               <p>DIČ: 1130024159</p>
@@ -100,11 +100,11 @@ export default function OchranaSukromia() {
             </p>
             <ul className="list-disc list-inside mt-2 space-y-1">
               <li>
-                <strong>Vercel Analytics</strong> — anonymizované štatistiky
+                <strong>Vercel Analytics</strong> - anonymizované štatistiky
                 návštevnosti bez cookies (pozri nižšie)
               </li>
               <li>
-                <strong>Google Maps</strong> — vkladané mapy tras; Google
+                <strong>Google Maps</strong> - vkladané mapy tras; Google
                 spracúva údaje podľa vlastných podmienok (iba po udelení
                 súhlasu)
               </li>
@@ -129,7 +129,7 @@ export default function OchranaSukromia() {
               3. Vercel Analytics
             </h2>
             <p>
-              Stránka používa <strong>Vercel Analytics</strong> — nástroj na
+              Stránka používa <strong>Vercel Analytics</strong> - nástroj na
               meranie návštevnosti, ktorý je navrhnutý s ohľadom na súkromie.
               Vercel Analytics:
             </p>
@@ -143,7 +143,7 @@ export default function OchranaSukromia() {
               <li>nezdieľa údaje s tretími stranami na reklamné účely</li>
             </ul>
             <p className="mt-2">
-              Právny základ: oprávnený záujem (čl. 6 ods. 1 písm. f) GDPR) —
+              Právny základ: oprávnený záujem (čl. 6 ods. 1 písm. f) GDPR) -
               sledovanie výkonu a zlepšovanie stránky.
             </p>
           </section>
@@ -180,27 +180,27 @@ export default function OchranaSukromia() {
             <p>Podľa GDPR máte právo:</p>
             <ul className="list-disc list-inside mt-2 space-y-1">
               <li>
-                <strong>Právo na prístup</strong> — vedieť, aké údaje o vás
+                <strong>Právo na prístup</strong> - vedieť, aké údaje o vás
                 spracúvame
               </li>
               <li>
-                <strong>Právo na opravu</strong> — požiadať o opravu nesprávnych
+                <strong>Právo na opravu</strong> - požiadať o opravu nesprávnych
                 údajov
               </li>
               <li>
-                <strong>Právo na vymazanie</strong> — &quot;právo byť
+                <strong>Právo na vymazanie</strong> - &quot;právo byť
                 zabudnutý&quot;
               </li>
               <li>
-                <strong>Právo namietať</strong> — namietať spracúvanie na
+                <strong>Právo namietať</strong> - namietať spracúvanie na
                 základe oprávneného záujmu
               </li>
               <li>
-                <strong>Právo na prenositeľnosť</strong> — získať svoje údaje v
+                <strong>Právo na prenositeľnosť</strong> - získať svoje údaje v
                 strojovo čitateľnom formáte
               </li>
               <li>
-                <strong>Právo podať sťažnosť</strong> — na Úrad na ochranu
+                <strong>Právo podať sťažnosť</strong> - na Úrad na ochranu
                 osobných údajov SR (
                 <a
                   href="https://www.dataprotection.gov.sk"

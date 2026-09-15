@@ -299,12 +299,12 @@ export default function Home() {
                   description="Guláš pre bežcov."
                 />
                 <TimelineItem
-                  time="15:00-15:30"
+                  time="15:30"
                   title="Panelová diskusia"
                   description="Diskusia: Dušan Havrila + Jakub Marton."
                 />
                 <TimelineItem
-                  time="15:30"
+                  time="16:00"
                   title="Vyhodnotenie + poďakovanie + tombola"
                   description="Vyhlásenie víťazov, poďakovanie a tombola."
                 />
@@ -410,7 +410,7 @@ export default function Home() {
                   <p className="text-white/85 font-sans leading-relaxed text-sm mb-5">
                     Certifikovaný osobný tréner a športovec z Košíc. Dokončil
                     Ironman 70.3, ultramaratón aj výstup na himalájsky vrchol
-                    Mera Peak (6&nbsp;476 m n. m.) — a to len zlomok jeho
+                    Mera Peak (6&nbsp;476 m n. m.) - a to len zlomok jeho
                     športových výkonov. Klientom všetkých vekových kategórií
                     pomáha objavovať radosť z pohybu a zdravého životného štýlu.
                   </p>
@@ -576,11 +576,11 @@ export default function Home() {
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
               {[
-                { src: "/beh/1-min.jpg", alt: "Beh Srdcom i telom — foto 1" },
-                { src: "/beh/2-min.jpg", alt: "Beh Srdcom i telom — foto 2" },
-                { src: "/beh/3-min.jpg", alt: "Beh Srdcom i telom — foto 3" },
-                { src: "/beh/8-min.jpg", alt: "Beh Srdcom i telom — foto 4" },
-                { src: "/beh/10-min.jpg", alt: "Beh Srdcom i telom — foto 5" },
+                { src: "/beh/1-min.jpg", alt: "Beh Srdcom i telom - foto 1" },
+                { src: "/beh/2-min.jpg", alt: "Beh Srdcom i telom - foto 2" },
+                { src: "/beh/3-min.jpg", alt: "Beh Srdcom i telom - foto 3" },
+                { src: "/beh/8-min.jpg", alt: "Beh Srdcom i telom - foto 4" },
+                { src: "/beh/10-min.jpg", alt: "Beh Srdcom i telom - foto 5" },
               ].map(({ src, alt }) => (
                 <a
                   key={src}
